@@ -7,6 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>Registrar Inserted Successfully</h2>
+
+<img style="width: 50px;height: 50px;float: left;margin-left: 10px; margin-top: 10px" onclick="goBack()" alt="backbutton" src="<%=request.getContextPath()%>/images/backbutton.png"><br><br>
+<hr>
+<h2>Registrar Inserted Successfully!</h2>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
 </body>
 </html>

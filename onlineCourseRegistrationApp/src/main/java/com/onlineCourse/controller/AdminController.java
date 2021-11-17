@@ -55,6 +55,7 @@ public class AdminController {
 		}
 		
 		Registrar savedRegistrar= service.InsertRegistrar(regis);
+		
 		ModelAndView mv=new ModelAndView("RegistrarSuccess","regis",savedRegistrar);
 		
 		return mv;

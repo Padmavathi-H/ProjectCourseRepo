@@ -9,8 +9,13 @@
 <body>
 <%@taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
 
-<h2 align="center">Registrar Details</h2>
+<div style="flex-direction: row">
+<img style="width: 50px;height: 50px;float: left;margin-left: 10px; margin-top: 10px" onclick="goBack()" alt="backbutton" src="<%=request.getContextPath()%>/images/backbutton.png">
+
+
+<h1 align="center">Registrar Details</h1>
 <hr>
+</div>
 <div align="center">
 <br>
 <f:form action="insertRegistrar" method="post" modelAttribute="regisData">
@@ -54,5 +59,10 @@
 </div>
 </f:form>
 </div>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
 </body>
 </html>

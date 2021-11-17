@@ -105,7 +105,6 @@ public class LoginController {
           	
              if(registrar!=null) {
             	 
-            	 String message="username does not exists!...";
             	 
           	return new ModelAndView("registrarPage");
              }

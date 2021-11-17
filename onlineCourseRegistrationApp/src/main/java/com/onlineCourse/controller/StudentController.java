@@ -1,6 +1,7 @@
 package com.onlineCourse.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.onlineCourse.Services.StudentService;
+import com.onlineCourse.beans.CourseBean;
 import com.onlineCourse.beans.Student;
 
 @Controller
@@ -57,5 +59,17 @@ public class StudentController {
 		
 		return mv;
 	}
+	
+//	@GetMapping("/studentCourses")
+//	public String studentCoursesLaunch(Model model) {
+//		
+//		List<CourseBean> stuCourse = 
+//		
+//		model.addAttribute("studentCourse", stuCourse);
+//		
+//		return "studentViewCourses";
+//	}
+//	
+//	
 
 }

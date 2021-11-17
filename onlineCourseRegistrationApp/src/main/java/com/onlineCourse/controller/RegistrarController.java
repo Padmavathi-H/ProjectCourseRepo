@@ -22,11 +22,6 @@ public class RegistrarController {
 	@Autowired
 	private CourseService courseService;
 	
-	@GetMapping("/registrar")
-	public String registrarPageLaunch() {
-		
-		return "registrar";
-	}
 	
 	@GetMapping("/addNewCoursePage")
 	public String newCoursePageLaunch(Model model) {

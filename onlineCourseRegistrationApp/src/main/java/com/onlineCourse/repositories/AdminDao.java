@@ -6,8 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 import com.onlineCourse.beans.Admin;
 
 
-
-
 public interface AdminDao  extends JpaRepository<Admin,Integer> {
 
 	@Query("from Admin where username=:username AND password=:password")

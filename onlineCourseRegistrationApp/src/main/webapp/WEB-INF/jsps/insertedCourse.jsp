@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<img style="width: 50px;height: 50px;float: left;margin-left: 10px; margin-top: 10px" onclick="goBack()" alt="backbutton" src="<%=request.getContextPath()%>/images/backbutton.png">
+<img style="width: 50px;height: 50px;float: left;margin-left: 20px; margin-top: 20px" onclick="goBack()" alt="backbutton" src="<%=request.getContextPath()%>/images/backbutton.png"><br><br>
 
 
 <h1>Course Inserted Successfully!</h1>

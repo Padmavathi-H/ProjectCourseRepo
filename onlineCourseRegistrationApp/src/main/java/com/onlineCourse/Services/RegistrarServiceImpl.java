@@ -17,5 +17,10 @@ public class RegistrarServiceImpl implements RegistrarService {
 		
 		return registrardao.save(registrar);
 	}
+	@Override
+	public Registrar InsertRegistrar(Registrar regis) {
+		// TODO Auto-generated method stub
+		return registrardao.save(regis) ;
+	}
 
 }

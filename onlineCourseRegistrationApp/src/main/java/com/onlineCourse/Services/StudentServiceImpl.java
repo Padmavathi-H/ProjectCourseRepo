@@ -25,9 +25,9 @@ public class StudentServiceImpl  implements StudentService{
 	}
 
 	@Override
-	public List<CourseBean> studentViewCourses() {
+	public List<Student> studentViewCourses() {
 		
-		return null;
+		return  studentdao.findAll();
 	}
 
 }

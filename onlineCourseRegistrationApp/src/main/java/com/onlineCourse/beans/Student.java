@@ -30,7 +30,7 @@ public class Student {
 	@Email(message = "Enter Valid Email Address")
 	private String  stud_email;
 	
-	@NotEmpty(message="must slecet gender")
+	@NotEmpty(message="must select gender")
 	private String  gender;
 	
 	private String  stud_address;

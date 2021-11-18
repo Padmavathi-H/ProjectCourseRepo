@@ -15,7 +15,7 @@
     <a class="nav-link disabled" href="#"> <h1> Registrar Portal </h1> </a> 
     </div>
     <ul class="nav navbar-nav" style="float: right;">
-      <li class="active"><a href="#">Logout</a></li>
+      <li class="active"><a href="/">Logout</a></li>
      </ul>
   </div>
 </nav> 

@@ -24,10 +24,7 @@ public class StudentServiceImpl  implements StudentService{
 		return studentdao.save(student);
 	}
 
-	@Override
-	public List<CourseBean> studentViewCourses() {
-		
-		return null;
-	}
+	
+	
 
 }

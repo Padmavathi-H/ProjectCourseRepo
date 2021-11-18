@@ -15,27 +15,31 @@ public class CourseBean {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int c_Id;
+	private Integer c_Id;
 	
 	@NotEmpty(message = "Mandotory")
 	private String c_Name;
 	@NotEmpty(message = "Mandotory")
 	private String c_Duration;
 	@NotNull(message = "Mandotory")
+<<<<<<< HEAD
 	private int c_Fees;
 	
+=======
+	private Integer c_Fees;
+>>>>>>> branch 'master' of https://github.com/Padmavathi-H/ProjectCourseRepo.git
 	@NotNull(message = "Mandotory")
-	private int c_Capacity;
+	private Integer c_Capacity;
 	@NotNull(message = "Mandotory")
-	private int c_Seats;
+	private Integer c_Seats;
 	
 	public CourseBean() {
 		
 	}
 
-	public CourseBean(int c_Id, @NotEmpty(message = "Mandotory") String c_Name,
-			@NotEmpty(message = "Mandotory") String c_Duration, @NotEmpty(message = "Mandotory") int c_Fees,
-			@NotEmpty(message = "Mandotory") int c_Capacity, @NotEmpty(message = "Mandotory") int c_Seats) {
+	public CourseBean(Integer c_Id, @NotEmpty(message = "Mandotory") String c_Name,
+			@NotEmpty(message = "Mandotory") String c_Duration, @NotNull(message = "Mandotory") Integer c_Fees,
+			@NotNull(message = "Mandotory") Integer c_Capacity, @NotNull(message = "Mandotory") Integer c_Seats) {
 		super();
 		this.c_Id = c_Id;
 		this.c_Name = c_Name;
@@ -45,11 +49,11 @@ public class CourseBean {
 		this.c_Seats = c_Seats;
 	}
 
-	public int getC_Id() {
+	public Integer getC_Id() {
 		return c_Id;
 	}
 
-	public void setC_Id(int c_Id) {
+	public void setC_Id(Integer c_Id) {
 		this.c_Id = c_Id;
 	}
 
@@ -69,27 +73,27 @@ public class CourseBean {
 		this.c_Duration = c_Duration;
 	}
 
-	public int getC_Fees() {
+	public Integer getC_Fees() {
 		return c_Fees;
 	}
 
-	public void setC_Fees(int c_Fees) {
+	public void setC_Fees(Integer c_Fees) {
 		this.c_Fees = c_Fees;
 	}
 
-	public int getC_Capacity() {
+	public Integer getC_Capacity() {
 		return c_Capacity;
 	}
 
-	public void setC_Capacity(int c_Capacity) {
+	public void setC_Capacity(Integer c_Capacity) {
 		this.c_Capacity = c_Capacity;
 	}
 
-	public int getC_Seats() {
+	public Integer getC_Seats() {
 		return c_Seats;
 	}
 
-	public void setC_Seats(int c_Seats) {
+	public void setC_Seats(Integer c_Seats) {
 		this.c_Seats = c_Seats;
 	}
 
@@ -98,7 +102,7 @@ public class CourseBean {
 		return "CourseBean [c_Id=" + c_Id + ", c_Name=" + c_Name + ", c_Duration=" + c_Duration + ", c_Fees=" + c_Fees
 				+ ", c_Capacity=" + c_Capacity + ", c_Seats=" + c_Seats + "]";
 	}
-	
+
 	
 
 }

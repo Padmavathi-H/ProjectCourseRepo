@@ -17,7 +17,7 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 @Entity
 public class Registrar {
 	
-	
+	//this is the registrar class
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

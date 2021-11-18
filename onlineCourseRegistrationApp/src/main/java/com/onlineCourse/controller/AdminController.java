@@ -1,6 +1,7 @@
 package com.onlineCourse.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -14,14 +15,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.onlineCourse.Services.CourseService;
 import com.onlineCourse.Services.RegistrarService;
+import com.onlineCourse.Services.StudentService;
+import com.onlineCourse.beans.CourseBean;
 import com.onlineCourse.beans.Registrar;
+import com.onlineCourse.beans.Student;
 
 @Controller
 public class AdminController {
 
 	@Autowired
 	private RegistrarService service;
+	
+	@Autowired
+	private CourseService courseService;
+	
+	@Autowired
+	private StudentService studentService;
 	
 	@ModelAttribute("genderList")
 	public Map<String,String> genderList(){
@@ -39,7 +51,8 @@ public class AdminController {
 	{
 	    Registrar logBean=new Registrar();
 		
-			model.addAttribute("regisData", logBean);
+		model.addAttribute("regisData", logBean);
+		
 		return "NewRegistrar";
 	}	
 	
@@ -59,6 +72,23 @@ public class AdminController {
 		ModelAndView mv=new ModelAndView("RegistrarSuccess","regis",savedRegistrar);
 		
 		return mv;
+	}
+	
+	@GetMapping("/viewCourse")
+	public String viewCourselaunch(Model model)
+	{	
+        List<CourseBean> courseList = courseService.viewCourses();
+		
+		model.addAttribute("viewCourse", courseList);
+		
+		return "viewCoursesForAdmin";
+	}
+	
+	@GetMapping("/viewStudent")
+	public String viewStudentlaunch()
+	{	
+		
+		return "viewAllStudentsPage";
 	}
 	
 	

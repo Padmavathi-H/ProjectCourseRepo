@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.onlineCourse.Services.CourseService;
 import com.onlineCourse.Services.StudentService;
 import com.onlineCourse.beans.CourseBean;
 import com.onlineCourse.beans.Student;
@@ -24,6 +25,9 @@ public class StudentController {
 	
 	@Autowired
 	private StudentService stdservice;
+	
+	@Autowired
+	private CourseService courseService;
 	
 	@ModelAttribute("genderList")
 	public Map<String,String> genderList(){
@@ -60,15 +64,15 @@ public class StudentController {
 		return mv;
 	}
 	
-//	@GetMapping("/studentCourses")
-//	public String studentCoursesLaunch(Model model) {
-//		
-//		List<CourseBean> stuCourse = 
-//		
-//		model.addAttribute("studentCourse", stuCourse);
-//		
-//		return "studentViewCourses";
-//	}
+	@GetMapping("/studentViewCourses")
+	public String studentCoursesLaunch(Model model) {
+		
+		List<CourseBean> stuCourse = courseService.getCoursesForStudents();
+		
+		model.addAttribute("studentCourse", stuCourse);
+		
+		return "studentCourses";
+	}
 //	
 //	
 

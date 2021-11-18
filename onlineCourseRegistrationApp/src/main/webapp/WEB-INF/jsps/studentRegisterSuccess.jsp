@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>RegisterSuccessful!..</h1>
+<h1>Registered Successfully!..</h1>
 <button><a href="/">Back To Home</a></button>
 </body>
 </html>

@@ -9,11 +9,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.onlineCourse.beans.CourseBean;
-<<<<<<< HEAD
+
 import com.onlineCourse.exceptions.CourseNotFoundException;
-=======
 import com.onlineCourse.beans.Student;
->>>>>>> branch 'master' of https://github.com/Padmavathi-H/ProjectCourseRepo.git
 import com.onlineCourse.repositories.CourseDao;
 
 
@@ -38,7 +36,6 @@ public class CourseServiceImpl implements CourseService {
 	}
 
 	@Override
-<<<<<<< HEAD
 	public CourseBean getCourseById(Integer courseId) throws CourseNotFoundException {
 		
 		return courseDao.findById(courseId).orElseThrow(() ->new CourseNotFoundException("Course not found with Id "+courseId) );
@@ -68,15 +65,10 @@ public class CourseServiceImpl implements CourseService {
 		 
 	}
 
-	
-
-
-	
-=======
 	public List<CourseBean> getCoursesForStudents() {
 		
 		return courseDao.viewCourses();
 	}
 
->>>>>>> branch 'master' of https://github.com/Padmavathi-H/ProjectCourseRepo.git
+
 }

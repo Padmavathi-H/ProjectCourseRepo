@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-
+//course bean
 
 @Entity
 public class CourseBean {
@@ -22,12 +22,7 @@ public class CourseBean {
 	@NotEmpty(message = "Mandotory")
 	private String c_Duration;
 	@NotNull(message = "Mandotory")
-<<<<<<< HEAD
-	private int c_Fees;
-	
-=======
 	private Integer c_Fees;
->>>>>>> branch 'master' of https://github.com/Padmavathi-H/ProjectCourseRepo.git
 	@NotNull(message = "Mandotory")
 	private Integer c_Capacity;
 	@NotNull(message = "Mandotory")

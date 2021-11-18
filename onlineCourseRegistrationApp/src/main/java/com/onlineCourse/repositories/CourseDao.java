@@ -9,10 +9,6 @@ import com.onlineCourse.beans.CourseBean;
 
 public interface CourseDao extends JpaRepository<CourseBean, Integer>{
 	
-	
-	@Query("select c_Id, c_Name, c_Duration, c_Fees, c_Seats from course_bean ")
-	public List<CourseBean> viewCourses();
-
 
 	
 }

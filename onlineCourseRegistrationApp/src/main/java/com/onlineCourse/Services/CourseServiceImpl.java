@@ -45,11 +45,11 @@ public class CourseServiceImpl implements CourseService {
 	public CourseBean updateCourse(CourseBean course) {
 		
 
-		Integer initialcapacity=course.getC_Capacity();
+		Integer initialcapacity=course.getcCapacity();
 		
 		CourseBean updatedcourse=courseDao.save(course);
 		
-		Integer finalcapacity=updatedcourse.getC_Capacity();
+		Integer finalcapacity=updatedcourse.getcCapacity();
 		
 		if(finalcapacity<initialcapacity) {
 			return course;
@@ -65,10 +65,13 @@ public class CourseServiceImpl implements CourseService {
 		 
 	}
 
+	@Override
 	public List<CourseBean> getCoursesForStudents() {
 		
-		return courseDao.viewCourses();
+		return courseDao.findAll();
 	}
+    
+	
 
 
 }

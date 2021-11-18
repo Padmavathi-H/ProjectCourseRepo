@@ -36,12 +36,12 @@
     <c:forEach var="course" items="${viewCourse }">
     
     <tr>
-      <th scope="row"><c:out value="${course.c_Id }"></c:out></th>
-      <td><c:out value="${course.c_Name }"></c:out> </td>
-      <td><c:out value="${course.c_Duration }"></c:out> </td>
-   	  <td><c:out value="${course.c_Fees }"></c:out> </td>
-   	  <td><c:out value="${course.c_Capacity }"></c:out> </td>
-   	  <td><c:out value="${course.c_Seats }"></c:out> </td>
+      <th scope="row"><c:out value="${course.cId }"></c:out></th>
+      <td><c:out value="${course.cName }"></c:out> </td>
+      <td><c:out value="${course.cDuration }"></c:out> </td>
+   	  <td><c:out value="${course.cFees }"></c:out> </td>
+   	  <td><c:out value="${course.cCapacity }"></c:out> </td>
+   	  <td><c:out value="${course.cSeats }"></c:out> </td>
    	  
    	 
     </tr>

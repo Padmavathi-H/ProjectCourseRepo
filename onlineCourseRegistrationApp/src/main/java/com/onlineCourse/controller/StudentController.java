@@ -73,7 +73,24 @@ public class StudentController {
 		
 		return "studentCourses";
 	}
-//	
-//	
+	
+	@GetMapping("/enrollCourse")
+	public String PayPageLaunch() {
+		
+		
+		return "PaymentDetails";
+		
+	}
+	
+	@PostMapping("/payment")
+	public String doPayment()
+	{
+		return "PaymentSuccess";
+	}
+	
+    
+	
+	
+	
 
 }

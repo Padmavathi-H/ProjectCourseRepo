@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+   
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +19,7 @@
 
 <h3 style="color: red">${flag }</h3>
 
-<f:form action="option" method="post" modelAttribute="LoginData">
+<f:form action="login" method="post" modelAttribute="LoginData">
 
 UserName:<f:input path="username"/><f:errors path="username" class="er"/><br><br>
 

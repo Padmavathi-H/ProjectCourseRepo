@@ -16,12 +16,17 @@ public class StudentServiceImpl  implements StudentService{
 	@Autowired
 	private StudentDao studentdao;
 	
-	private CourseDao courseDao;
-
+	
 	@Override
 	public Student saveStudent(Student student) {
 		
 		return studentdao.save(student);
+	}
+
+	@Override
+	public List<Student> getAllStudents() {
+		
+		return studentdao.findAll();
 	}
 
 	

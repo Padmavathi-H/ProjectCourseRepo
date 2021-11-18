@@ -1,6 +1,7 @@
 package com.onlineCourse.beans;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,89 +16,97 @@ public class CourseBean {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer c_Id;
+	private Integer cId;
+	
 	
 	@NotEmpty(message = "Mandotory")
-	private String c_Name;
+	private String cName;
+	
+	
 	@NotEmpty(message = "Mandotory")
-	private String c_Duration;
+	private String cDuration;
+	
+	
 	@NotNull(message = "Mandotory")
-	private Integer c_Fees;
+	private Integer cFees;
+	
+	
 	@NotNull(message = "Mandotory")
-	private Integer c_Capacity;
+	private Integer cCapacity;
+	
+	
 	@NotNull(message = "Mandotory")
-	private Integer c_Seats;
+	private Integer cSeats;
 	
 	public CourseBean() {
 		
 	}
 
-	public CourseBean(Integer c_Id, @NotEmpty(message = "Mandotory") String c_Name,
-			@NotEmpty(message = "Mandotory") String c_Duration, @NotNull(message = "Mandotory") Integer c_Fees,
-			@NotNull(message = "Mandotory") Integer c_Capacity, @NotNull(message = "Mandotory") Integer c_Seats) {
+	public CourseBean(Integer cId, @NotEmpty(message = "Mandotory") String cName,
+			@NotEmpty(message = "Mandotory") String cDuration, @NotNull(message = "Mandotory") Integer cFees,
+			@NotNull(message = "Mandotory") Integer cCapacity, @NotNull(message = "Mandotory") Integer cSeats) {
 		super();
-		this.c_Id = c_Id;
-		this.c_Name = c_Name;
-		this.c_Duration = c_Duration;
-		this.c_Fees = c_Fees;
-		this.c_Capacity = c_Capacity;
-		this.c_Seats = c_Seats;
+		this.cId = cId;
+		this.cName = cName;
+		this.cDuration = cDuration;
+		this.cFees = cFees;
+		this.cCapacity = cCapacity;
+		this.cSeats = cSeats;
 	}
 
-	public Integer getC_Id() {
-		return c_Id;
+	public Integer getcId() {
+		return cId;
 	}
 
-	public void setC_Id(Integer c_Id) {
-		this.c_Id = c_Id;
+	public void setcId(Integer cId) {
+		this.cId = cId;
 	}
 
-	public String getC_Name() {
-		return c_Name;
+	public String getcName() {
+		return cName;
 	}
 
-	public void setC_Name(String c_Name) {
-		this.c_Name = c_Name;
+	public void setcName(String cName) {
+		this.cName = cName;
 	}
 
-	public String getC_Duration() {
-		return c_Duration;
+	public String getcDuration() {
+		return cDuration;
 	}
 
-	public void setC_Duration(String c_Duration) {
-		this.c_Duration = c_Duration;
+	public void setcDuration(String cDuration) {
+		this.cDuration = cDuration;
 	}
 
-	public Integer getC_Fees() {
-		return c_Fees;
+	public Integer getcFees() {
+		return cFees;
 	}
 
-	public void setC_Fees(Integer c_Fees) {
-		this.c_Fees = c_Fees;
+	public void setcFees(Integer cFees) {
+		this.cFees = cFees;
 	}
 
-	public Integer getC_Capacity() {
-		return c_Capacity;
+	public Integer getcCapacity() {
+		return cCapacity;
 	}
 
-	public void setC_Capacity(Integer c_Capacity) {
-		this.c_Capacity = c_Capacity;
+	public void setcCapacity(Integer cCapacity) {
+		this.cCapacity = cCapacity;
 	}
 
-	public Integer getC_Seats() {
-		return c_Seats;
+	public Integer getcSeats() {
+		return cSeats;
 	}
 
-	public void setC_Seats(Integer c_Seats) {
-		this.c_Seats = c_Seats;
+	public void setcSeats(Integer cSeats) {
+		this.cSeats = cSeats;
 	}
 
 	@Override
 	public String toString() {
-		return "CourseBean [c_Id=" + c_Id + ", c_Name=" + c_Name + ", c_Duration=" + c_Duration + ", c_Fees=" + c_Fees
-				+ ", c_Capacity=" + c_Capacity + ", c_Seats=" + c_Seats + "]";
+		return "CourseBean [cId=" + cId + ", cName=" + cName + ", cDuration=" + cDuration + ", cFees=" + cFees
+				+ ", cCapacity=" + cCapacity + ", cSeats=" + cSeats + "]";
 	}
 
 	
-
 }

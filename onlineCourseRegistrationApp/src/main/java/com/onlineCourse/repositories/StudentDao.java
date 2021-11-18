@@ -9,7 +9,7 @@ import com.onlineCourse.beans.Student;
 public interface StudentDao  extends JpaRepository<Student,Integer>{
 	
 	
-	@Query("from Student where Stud_email=:username AND  Stud_pass=:password")
+	@Query("from Student where studemail=:username AND  studpass=:password")
 	public Student validateStudent(String  username,String  password);
 
 }

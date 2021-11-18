@@ -3,6 +3,7 @@ package com.onlineCourse.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,8 +54,21 @@ public class LoginController {
 		return "home";
 	}
 	
+	@GetMapping("/logout")
+	public String logoutLauncher(HttpSession session, Model model) {
+		
+        session.invalidate();
+		
+		LoginBean loginBean =new LoginBean();
+		
+		model.addAttribute("LoginData",loginBean);
+		
+		
+		return "home";
+	}
+	
 
-	@PostMapping("/option")
+	@PostMapping("/login")
 	public ModelAndView optionLauncher(@Valid  @ModelAttribute("LoginData") LoginBean loginBean,BindingResult br) {
 		
     
@@ -91,7 +105,7 @@ public class LoginController {
         	Student stu=loginService.authenticateStudent(loginBean.getUsername(),loginBean.getPassword());
         	
         	if(stu!=null) {
-        	return new ModelAndView("studentPage");
+        	return new ModelAndView("studentPage","studentData",stu);
         	}
         	else {
         		return new ModelAndView("home","flag","Invalid Username or password!!..");

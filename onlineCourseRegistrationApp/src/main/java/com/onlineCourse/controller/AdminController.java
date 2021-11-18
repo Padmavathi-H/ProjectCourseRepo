@@ -14,6 +14,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.onlineCourse.Services.CourseService;
@@ -22,6 +23,7 @@ import com.onlineCourse.Services.StudentService;
 import com.onlineCourse.beans.CourseBean;
 import com.onlineCourse.beans.Registrar;
 import com.onlineCourse.beans.Student;
+import com.onlineCourse.exceptions.RegistrarNotFoundException;
 
 @Controller
 public class AdminController {
@@ -85,12 +87,37 @@ public class AdminController {
 	}
 	
 	@GetMapping("/viewStudent")
-	public String viewStudentlaunch()
+	public String viewStudentlaunch(Model model)
 	{	
+		
+        List<Student> studentList = studentService.getAllStudents();
+		
+		model.addAttribute("viewStudents", studentList);
 		
 		return "viewAllStudentsPage";
 	}
 	
+	@GetMapping("/viewRegistrar")
+	public String getallregistrarsHandler(Model model)
+	{
+	
+		List<Registrar> rlist=service.getAllRegistarDetails();
+	
+		model.addAttribute("registrarList", rlist);
+	
+		return "allregistrarlist";
+	}
+	
+	@GetMapping("/deleteRegistrar")
+	public String doDeleteRegistrar(@RequestParam("rid") Integer registrarId,Model model) throws RegistrarNotFoundException{
+		
+		List<Registrar> regiList = service.deleteRegistrarById(registrarId);
+		
+		model.addAttribute("registrarList", regiList);
+		
+		return "allregistrarlist";
+	}
+
 	
 	
 }

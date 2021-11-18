@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+   
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,10 +14,10 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-    <a class="nav-link disabled" href="#"> <h1> Student Portal </h1> </a>
+    <a class="nav-link disabled" href="#"> <h1> Student Portal ${studentData.studname }</h1> </a>
     </div>
     <ul class="nav navbar-nav" style="float: right;">
-      <li class="active"><a href="/">Logout</a></li>
+      <li class="active"><a href="/logout">Logout</a></li>
      </ul>
   </div>
 </nav>

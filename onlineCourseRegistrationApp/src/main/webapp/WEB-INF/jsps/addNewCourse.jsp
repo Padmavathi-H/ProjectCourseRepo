@@ -23,15 +23,15 @@
 
 <f:form action="/insertCourse" method="post" modelAttribute="insCourse">
 
-Course Name : <f:input path="c_Name"/> <f:errors path="c_Name"/> <br><br>
+Course Name : <f:input path="cName"/> <f:errors path="cName"/> <br><br>
 
-Course Duration :  <f:input path="c_Duration"/> <f:errors path="c_Duration"/><br><br>
+Course Duration :  <f:input path="cDuration"/> <f:errors path="cDuration"/><br><br>
 
-Course Fees : <f:input path="c_Fees"/> <f:errors path="c_Fees"/><br><br>
+Course Fees : <f:input path="cFees"/> <f:errors path="cFees"/><br><br>
 
-Course Capacity : <f:input path="c_Capacity"/> <f:errors path="c_Capacity"/><br><br>
+Course Capacity : <f:input path="cCapacity"/> <f:errors path="cCapacity"/><br><br>
 
-Seats available: <f:input path="c_Seats"/> <f:errors path="c_Seats"/><br><br>
+Seats available: <f:input path="cSeats"/> <f:errors path="cSeats"/><br><br>
 
 <input type="submit" value="InsertCourse" />
 

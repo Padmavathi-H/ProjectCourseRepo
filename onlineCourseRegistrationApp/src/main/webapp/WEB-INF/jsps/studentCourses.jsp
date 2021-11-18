@@ -34,26 +34,24 @@
   
   <tbody>
     
-    <c:forEach var="course" items="${studentCourse }">
-    
+    <c:forEach var="course" items="${studentCourse }">  
     <tr>
-      <th scope="row"><c:out value="${course.c_Id }"></c:out></th>
-      <td><c:out value="${course.c_Name }"></c:out> </td>
-      <td><c:out value="${course.c_Duration }"></c:out> </td>
-   	  <td><c:out value="${course.c_Fees }"></c:out> </td>
-   	  <td><c:out value="${course.c_Seats }"></c:out> </td>
-   	  <td> <a class="btn btn-success" href="enrollCourse/${course.c_Id }">Enroll</a></td>
+      <th scope="row"><c:out value="${course.cId }"></c:out></th>
+      <td><c:out value="${course.cName }"></c:out> </td>
+      <td><c:out value="${course.cDuration }"></c:out> </td>
+   	  <td><c:out value="${course.cFees }"></c:out> </td>
+   	  <td><c:out value="${course.cSeats }"></c:out> </td>
+   	  <td> <a class="btn btn-success" href="enrollCourse">Enroll</a></td>
    	 
     </tr>
-    
     </c:forEach>
+    
     
     
   </tbody>
   </table>
   
   
-
 <script>
 function goBack() {
   window.history.back();

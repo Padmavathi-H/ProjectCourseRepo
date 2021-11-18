@@ -15,17 +15,17 @@
 <h3 style="color: red">${flag }</h3>
 <f:form action="/editCoursedDetails" method="post" modelAttribute="Course">
 
-Course Id:<f:input path="c_Id" readonly="true"/> <br><br>
+Course Id:<f:input path="cId" readonly="true"/> <br><br>
 
-Course Name : <f:input path="c_Name" readonly="true"/> <br><br>
+Course Name : <f:input path="cName" readonly="true"/> <br><br>
 
-Course Duration :  <f:input path="c_Duration" readonly="true"/> <br><br>
+Course Duration :  <f:input path="cDuration" readonly="true"/> <br><br>
 
-Course Fees : <f:input path="c_Fees"/> <f:errors path="c_Fees"/><br><br>
+Course Fees : <f:input path="cFees"/> <f:errors path="cFees"/><br><br>
 
-Course Capacity : <f:input path="c_Capacity"/> <f:errors path="c_Capacity"/><br><br>
+Course Capacity : <f:input path="cCapacity"/> <f:errors path="cCapacity"/><br><br>
 
-Seats available: <f:input path="c_Seats" readonly="true"/> <br><br>
+Seats available: <f:input path="cSeats" readonly="true"/> <br><br>
 
 <input type="submit" value="Update">
 

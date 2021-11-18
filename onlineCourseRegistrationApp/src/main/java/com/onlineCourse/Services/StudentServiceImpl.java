@@ -29,6 +29,16 @@ public class StudentServiceImpl  implements StudentService{
 		return studentdao.findAll();
 	}
 
+	@Override
+	public void insertCourseIdwithStudent(Integer studentId, Integer courseId) {
+		
+		Student st=new Student();
+		
+		//studentdao.courseLinkwithStudent(studentId,courseId);
+		studentdao.savestudentAndCourse(studentId,courseId);
+		
+	}
+
 	
 	
 

@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -64,8 +65,8 @@ public class StudentController {
 		return mv;
 	}
 	
-	@GetMapping("/studentViewCourses")
-	public String studentCoursesLaunch(Model model) {
+	@GetMapping("/studentViewCourses/{studentId}")
+	public String studentCoursesLaunch(@PathVariable Integer studentId,Model model) {
 		
 		List<CourseBean> stuCourse = courseService.getCoursesForStudents();
 		
@@ -74,22 +75,27 @@ public class StudentController {
 		return "studentCourses";
 	}
 	
-	@GetMapping("/enrollCourse")
-	public String PayPageLaunch() {
-		
+	@GetMapping("/enrollCourse/{studentId}/{courseId}")
+	public String courselink(@PathVariable Integer studentId,@PathVariable Integer courseId,Model model) {
 		
 		return "PaymentDetails";
 		
 	}
 	
-	@PostMapping("/payment")
-	public String doPayment()
+	@PostMapping("/payment/{studentId}/{courseId}")
+	public String doPayment(@PathVariable Integer studentId,@PathVariable Integer courseId,Model model)
 	{
+		
 		return "PaymentSuccess";
 	}
 	
-    
-	
+	@GetMapping("/courseStudentLink/{studentId}/{courseId}")
+	public String courselink(@PathVariable Integer studentId,@PathVariable Integer courseId) {
+		
+		stdservice.insertCourseIdwithStudent(studentId,courseId);
+		
+		return "studentPage";
+	}
 	
 	
 

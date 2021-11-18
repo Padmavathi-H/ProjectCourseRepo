@@ -41,7 +41,7 @@
       <td><c:out value="${course.cDuration }"></c:out> </td>
    	  <td><c:out value="${course.cFees }"></c:out> </td>
    	  <td><c:out value="${course.cSeats }"></c:out> </td>
-   	  <td> <a class="btn btn-success" href="enrollCourse">Enroll</a></td>
+   	  <td> <a class="btn btn-success" href="/enrollCourse/${studentId}/${course.cId }">Enroll</a></td>
    	 
     </tr>
     </c:forEach>

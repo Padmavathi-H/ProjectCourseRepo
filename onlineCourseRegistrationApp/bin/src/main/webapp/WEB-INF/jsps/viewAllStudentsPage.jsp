@@ -38,14 +38,14 @@
     <c:forEach var="students" items="${viewStudents }">
     
     <tr>
-      <th scope="row"><c:out value="${students.stud_id }"></c:out></th>
-      <td><c:out value="${students.stud_name }"></c:out> </td>
-      <td><c:out value="${students.stud_email }"></c:out> </td>
+      <th scope="row"><c:out value="${students.studid }"></c:out></th>
+      <td><c:out value="${students.studname }"></c:out> </td>
+      <td><c:out value="${students.studemail }"></c:out> </td>
    	  <td><c:out value="${students.gender }"></c:out> </td>
-   	  <td><c:out value="${students.stud_address }"></c:out> </td>
-   	  <td><c:out value="${students.stud_mobile }"></c:out> </td>
-   	  <td><c:out value="${students.stud_DOB }"></c:out> </td>
-   	  <td><c:out value="${students.stud_pass }"></c:out> </td>
+   	  <td><c:out value="${students.studaddress }"></c:out> </td>
+   	  <td><c:out value="${students.studmobile }"></c:out> </td>
+   	  <td><c:out value="${students.studDOB }"></c:out> </td>
+   	  <td><c:out value="${students.studpass }"></c:out> </td>
    	  
    	 
     </tr>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>New Registrar Page</title>
 </head>
 <body>
 <%@taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
@@ -24,32 +24,32 @@
 <table>
 <tr>
 <td>Registrar Name : </td>
-<td> <f:input path="Reg_Name" /> <f:errors path="Reg_Name"/>
+<td> <f:input path="regName" /> <f:errors path="regName"/>
 </td>
 </tr>
 <tr>
 <td>Date of Birth : </td>
-<td><f:input path="Reg_Dob" type ="date" /> <f:errors path="Reg_Dob"/></td>
+<td><f:input path="regDob" type ="date" /> <f:errors path="regDob"/></td>
 </tr>
 <tr>
 <td>E-mail : </td>
-<td><f:input path="Reg_email" /> <f:errors path="Reg_email"/></td>
+<td><f:input path="regEmail" /> <f:errors path="regEmail"/></td>
 </tr>
 <tr>
 </tr>
 <tr>
 <td>Phone number : </td>
-<td><f:input path="Reg_mobile" /> <f:errors path="Reg_mobile"/></td>
+<td><f:input path="regMobile" /> <f:errors path="regMobile"/></td>
 </tr>
 <tr>
 <td>Year of Experience: </td>
-<td><f:input path="Reg_YOExp" /> <f:errors path="Reg_YOExp"/></td>
+<td><f:input path="regYOExp" /> <f:errors path="regYOExp"/></td>
 </tr>
 <tr><td>Gender : </td>
-<td><f:radiobuttons path="Reg_gender" items="${genderList }"/><f:errors path="Reg_gender"/><br><br></td>
+<td><f:radiobuttons path="regGender" items="${genderList }"/><f:errors path="regGender"/><br><br></td>
 <tr>
 <td>New Password : </td>
-<td><f:input path="Reg_pass" /> <f:errors path="Reg_pass"/></td>
+<td><f:input path="regPass" /> <f:errors path="regPass"/></td>
 </tr>
 <tr>
 <td></td>

@@ -4,18 +4,19 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Update Student Page</title>
 </head>
 <body>
-
 <%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
 
-<h1 align="center">Student SignUp</h1>
+<h1 align="center">Update Student Details</h1>
 <hr>
 
 
 
-<f:form action="SignUp" method="post" modelAttribute="studentData">
+<f:form action="/updateStudent" method="post" modelAttribute="updateStudentData">
+
+Student ID:<f:input path="studid" readonly="true"/><br><br>
 
 Name:<f:input path="studname"/><f:errors path="studname"/><br><br>
 
@@ -33,7 +34,7 @@ Password:<f:input path="studpass" type="password"/><f:errors path="studpass"/><b
 
 Confirm Password:<f:input path="studcpass" type="password"/><f:errors path="studcpass"/><br><br>
 
-<input type="submit" value="SignUp">
+<input type="submit" value="Update">
 
 </f:form>
 

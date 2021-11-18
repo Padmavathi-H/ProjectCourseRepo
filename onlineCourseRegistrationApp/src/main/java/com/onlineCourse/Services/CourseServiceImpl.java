@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.onlineCourse.beans.CourseBean;
+import com.onlineCourse.beans.Student;
 import com.onlineCourse.repositories.CourseDao;
 
 @Service
@@ -25,6 +26,12 @@ public class CourseServiceImpl implements CourseService {
 	public List<CourseBean> viewCourses() {
 		
 		return courseDao.findAll();
+	}
+
+	@Override
+	public List<CourseBean> getCoursesForStudents() {
+		
+		return courseDao.viewCourses();
 	}
 
 }

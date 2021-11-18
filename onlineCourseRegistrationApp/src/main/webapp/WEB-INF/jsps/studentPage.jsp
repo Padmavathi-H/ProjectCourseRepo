@@ -24,7 +24,7 @@
 
 <div>
 
-<a href="studentCourses"><button type="button" class="btn btn-info" style="margin-left: 20px;">Courses</button></a>
+<a href="studentViewCourses"><button type="button" class="btn btn-info" style="margin-left: 20px;">Courses</button></a>
 <a href="myCourses"><button type="button" class="btn btn-info" style="margin-left: 20px;">My Courses</button></a>
 <a href="updateStuProfile"><button type="button" class="btn btn-info" style="margin-left: 20px;">Update Profile</button></a>
 

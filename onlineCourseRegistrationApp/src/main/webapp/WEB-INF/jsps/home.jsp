@@ -20,7 +20,7 @@
 
 UserName:<f:input path="username"/><f:errors path="username" class="er"/><br><br>
 
-Password:<f:input path="password"/><f:errors path="password" class="er"/><br><br>
+Password:<f:input type="password" path="password"/><f:errors path="password" class="er"/><br><br>
 
 LoginAs:
    <f:select path="loginoption" items="${LoginOptions}"/>

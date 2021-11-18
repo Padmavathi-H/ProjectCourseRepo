@@ -88,17 +88,9 @@ public class AdminController {
 	public String viewStudentlaunch()
 	{	
 		
-		return "viewStudentsForAdmin";
-	}
-	
-	@GetMapping("/viewAllStudents")
-	public String viewAllStudentslaunch(Model model)
-	{	
-        List<Student> studentList = studentService.studentViewCourses();
-		
-		model.addAttribute("viewStudents", studentList);
-		
 		return "viewAllStudentsPage";
 	}
+	
+	
 	
 }

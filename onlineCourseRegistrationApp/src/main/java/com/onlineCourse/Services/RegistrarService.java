@@ -7,5 +7,7 @@ public interface RegistrarService {
 	public Registrar saveRegistrar(Registrar registrar);
 
 	public Registrar InsertRegistrar(Registrar regis);
+	
+	
 
 }

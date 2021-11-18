@@ -23,6 +23,7 @@ public class CourseBean {
 	private String c_Duration;
 	@NotNull(message = "Mandotory")
 	private int c_Fees;
+	
 	@NotNull(message = "Mandotory")
 	private int c_Capacity;
 	@NotNull(message = "Mandotory")

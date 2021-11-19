@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -132,7 +133,6 @@ public class AdminController {
 	public ModelAndView registrardisplaylaunch(String email) {
 
 
-
 	Registrar registrar= service.getRegistrarByEmail(email);
 
 
@@ -140,6 +140,27 @@ public class AdminController {
 
 	return mv;
 
+	}
+	
+	@GetMapping("/viewStudentByCourse")
+	public String launchStudentByCourse() {
+		
+		return "getStudentByCourseName";
+		
+	}
+	
+	@PostMapping("/studentByCourse")
+	public String studentByCourseLaunch(String courseName,ModelMap map) {
+		
+		CourseBean course = studentService.getStudentByCourseName(courseName);
+		
+		List<Student> studentData = course.getStudent();
+		
+		map.addAttribute("studentdata",studentData);
+		
+		map.addAttribute("courseName", course);
+		
+		return "studentByCourseName";
 	}
 	
 	

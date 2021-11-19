@@ -56,9 +56,10 @@ border: 1px solid #f1f1f1;
 <body>
 <hr>
 
-<form action="payment" method="post">
+<form action="/payment/${studentId}/${courseId}" method="post">
 <h2 align="center">PAYMENT DETAILS</h2>
 <hr>
+<h1>Payment for courseId: ${courseId}</h1>
 <div align="center" class="container">
 <table>
 <tr><td>Card Holder Name:</td></tr>

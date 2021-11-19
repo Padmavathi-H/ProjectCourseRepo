@@ -28,7 +28,7 @@
 
 <a href="addNewRegistrar"><button type="button" class="btn btn-info" style="margin-left: 20px;">Add New Registrar</button></a>
 <a href="viewRegistrar"><button type="button" class="btn btn-info" style="margin-left: 20px;">View Registrars</button></a>
-<a href="viewRegistrarByName"><button type="button" class="btn btn-info" style="margin-left: 20px;">View Registrar By Username</button></a>
+<a href="getregistrarbyemail"><button type="button" class="btn btn-info" style="margin-left: 20px;">View Registrar By Username</button></a>
 <a href="viewCourse"><button type="button" class="btn btn-info" style="margin-left: 20px;">View Courses</button></a>
 <a href="viewStudent"><button type="button" class="btn btn-info" style="margin-left: 20px;">View Students</button></a>
 <a href="viewStudentByCourse"><button type="button" class="btn btn-info" style="margin-left: 20px;">View Students By Course</button></a>

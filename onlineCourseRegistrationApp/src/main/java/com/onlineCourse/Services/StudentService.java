@@ -19,6 +19,8 @@ public interface StudentService {
 	public void insertCourseIdwithStudent(Integer studentId, Integer courseId);
 
 	public Student getMyCourses(Integer studentId);
+
+	public CourseBean getStudentByCourseName(String courseName);
 	
 	
 

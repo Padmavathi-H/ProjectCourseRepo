@@ -16,6 +16,10 @@ background-color:pink;
 </head>
 <body>
 <br><br>
-<h2 align="center">Payment Successfull!<h2>
+<form action="/courseStudentLink/${studentId}/${courseId}">
+<h2 align="center">Payment Successfull for the id ${courseId}!<h2>
+<input type="submit" value="Back To Myportal">
+</form>
+
 </body>
 </html>

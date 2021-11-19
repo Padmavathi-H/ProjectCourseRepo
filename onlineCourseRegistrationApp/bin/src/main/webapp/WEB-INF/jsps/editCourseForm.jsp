@@ -27,7 +27,7 @@ Course Capacity : <f:input path="cCapacity"/> <f:errors path="cCapacity"/><br><b
 
 Seats available: <f:input path="cSeats" readonly="true"/> <br><br>
 
-<input type="submit" value="Update">
+<input type="submit" value="Update" onclick=" return alert('Updated Successfully')">
 
 </f:form>
 

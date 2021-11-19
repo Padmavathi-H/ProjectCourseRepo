@@ -20,7 +20,7 @@ Student ID:<f:input path="studid" readonly="true"/><br><br>
 
 Name:<f:input path="studname"/><f:errors path="studname"/><br><br>
 
-Email:<f:input path="studemail"/><f:errors path="studemail"/><br><br>
+Email:<f:input path="studemail" readonly="true"/><f:errors path="studemail"/><br><br>
 
 Gender:<f:radiobuttons path="gender" items="${genderList }"/><f:errors path="gender"/><br><br>
 

@@ -55,7 +55,8 @@ public class StudentServiceImpl  implements StudentService{
         ct.setcId(ct.getcId());
         ct.setcName(ct.getcName());
         ct.setcDuration(ct.getcDuration());
-        ct.setcFees(ct.getcCapacity());
+        ct.setcFees(ct.getcFees());
+        ct.setcCapacity(ct.getcCapacity());
         ct.setcSeats(ct.getcSeats());
         
         Student st=studentdao.findById(studentId).get();
@@ -82,6 +83,12 @@ public class StudentServiceImpl  implements StudentService{
 	public Student getMyCourses(Integer studentId) {
 	
 		return studentdao.findById(studentId).get();
+	}
+
+	@Override
+	public CourseBean getStudentByCourseName(String courseName) {
+		
+		return studentdao.findByCourseName(courseName);
 	}
 
 	

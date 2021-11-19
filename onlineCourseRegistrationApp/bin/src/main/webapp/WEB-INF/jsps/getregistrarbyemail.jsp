@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Registrar By Email</title>
+<title>Insert title here</title>
 </head>
 <body bgcolor="pink">
 

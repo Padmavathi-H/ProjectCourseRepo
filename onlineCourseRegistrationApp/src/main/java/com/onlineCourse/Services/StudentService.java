@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.onlineCourse.beans.CourseBean;
 import com.onlineCourse.beans.Student;
+import com.onlineCourse.exceptions.StudentNotFoundException;
 
 public interface StudentService {
 	
@@ -11,7 +12,11 @@ public interface StudentService {
 	
 	public List<Student> getAllStudents();
 
-	public void insertCourseIdwithStudent(Integer studentId, Integer courseId);
+	public Student getStudentById(Integer studentId) throws StudentNotFoundException;
+
+	public Student updateStudent(Student student);
+
+	//public void insertCourseIdwithStudent(Integer studentId, Integer courseId);
 	
 	
 

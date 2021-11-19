@@ -1,6 +1,8 @@
 package com.onlineCourse.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.validation.Valid;
 
@@ -15,8 +17,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.onlineCourse.Services.CourseService;
+import com.onlineCourse.Services.RegistrarService;
 import com.onlineCourse.beans.CourseBean;
+import com.onlineCourse.beans.Registrar;
+import com.onlineCourse.beans.Student;
 import com.onlineCourse.exceptions.CourseNotFoundException;
+import com.onlineCourse.exceptions.RegistrarNotFoundException;
 
 @Controller
 public class RegistrarController {
@@ -24,7 +30,19 @@ public class RegistrarController {
 	@Autowired
 	private CourseService courseService;
 	
+	@Autowired
+	private RegistrarService registrarService;
 	
+	@ModelAttribute("genderList")
+	public Map<String,String> genderList(){
+		
+		Map<String, String> map=new HashMap<String, String>();
+		
+		map.put("Male", "MALE");
+		map.put("Female", "FEMALE");
+	
+	    return map;
+	}
 	
 	@GetMapping("/addNewCoursePage")
 	public String newCoursePageLaunch(Model model) {
@@ -111,6 +129,34 @@ public class RegistrarController {
 	}
 	
 	
+	@GetMapping("/updateRegProfile/{registrarId}")
+	public String updateRegistrar(@PathVariable Integer registrarId,Model model ) throws RegistrarNotFoundException{
+		
+		System.out.println(registrarId);
+		
+		Registrar registrar =  registrarService.getRegistrarById(registrarId);
+		
+		System.out.println(registrar);
+		model.addAttribute("updateRegistrarData", registrar);
+		
+		return "updateRegistrarPage";
+		
+		
+	}
+	
+	
+	@PostMapping("/updateRegistrar")
+	public ModelAndView doUpdateStudent(@Valid @ModelAttribute("updateRegistrarData") Registrar registrar, BindingResult br) {
+		
+		if(br.hasErrors()) {
+			
+			return new ModelAndView("updateRegistrarPage");
+		}
+			
+			 registrarService.updateRegistrar(registrar);
+		
+		
+		return  new ModelAndView("updateRegistrarSuccess");	}
 	
 	
 	

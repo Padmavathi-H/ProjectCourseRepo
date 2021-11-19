@@ -28,7 +28,7 @@
 
 <a href="addNewCoursePage"><button type="button" class="btn btn-info" style="margin-left: 20px;">Add New Course</button></a>
 <a href="viewCoursePage"><button type="button" class="btn btn-info" style="margin-left: 20px;">View Courses</button></a>
-<a href="updateRegProfile"><button type="button" class="btn btn-info" style="margin-left: 20px;">Update Profile</button></a>
+<a href="/updateRegProfile/${registratData.regId}"><button type="button" class="btn btn-info" style="margin-left: 20px;">Update Profile</button></a>
 
 </div>
 

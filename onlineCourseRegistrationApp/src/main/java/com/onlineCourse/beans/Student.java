@@ -59,11 +59,16 @@ public class Student {
 	
 
 
+	
+
+
+
+
 	@Override
 	public String toString() {
 		return "Student [studid=" + studid + ", studname=" + studname + ", studemail=" + studemail + ", gender="
 				+ gender + ", studaddress=" + studaddress + ", studmobile=" + studmobile + ", studDOB=" + studDOB
-				+ ", studpass=" + studpass + ", studcpass=" + studcpass + ", courses=" + courses + "]";
+				+ ", studpass=" + studpass + ", studcpass=" + studcpass + "]";
 	}
 
 
@@ -71,12 +76,20 @@ public class Student {
 
 
 
+
+
+
+
+
+	
+
+
+
 	public Student(Integer studid,
 			@NotEmpty(message = "Name is mandatory") @Size(min = 3, message = "Minimum size should be 3 charecter") String studname,
 			@Email(message = "Enter Valid Email Address") String studemail,
 			@NotEmpty(message = "must select gender") String gender, String studaddress, String studmobile,
-			@Past(message = "Date should in the past") LocalDate studDOB, String studpass, String studcpass,
-			List<CourseBean> courses) {
+			@Past(message = "Date should in the past") LocalDate studDOB, String studpass, String studcpass) {
 		super();
 		this.studid = studid;
 		this.studname = studname;
@@ -87,8 +100,12 @@ public class Student {
 		this.studDOB = studDOB;
 		this.studpass = studpass;
 		this.studcpass = studcpass;
-		this.courses = courses;
 	}
+
+
+
+
+
 
 
 

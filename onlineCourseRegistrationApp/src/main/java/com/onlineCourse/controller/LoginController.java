@@ -120,7 +120,7 @@ public class LoginController {
              if(registrar!=null) {
             	 
             	 
-          	return new ModelAndView("registrarPage");
+          	return new ModelAndView("registrarPage","registratData",registrar);
              }
           	else {
           		return new ModelAndView("home","flag","Invalid Username or password!!..");

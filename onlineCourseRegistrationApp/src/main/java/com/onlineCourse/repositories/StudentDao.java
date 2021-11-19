@@ -14,7 +14,7 @@ public interface StudentDao  extends JpaRepository<Student,Integer>{
 	public Student validateStudent(String  username,String  password);
 
 	
-	 @Query(value="insert into student_courses(student_studid, courses_c_id) values(?,?)",nativeQuery=true)
-	 public void savestudentAndCourse(Integer studentId,Integer courseId);
+//	 @Query(value="insert into student_courses(student_studid, courses_c_id) values(?,?)",nativeQuery=true)
+//	 public void savestudentAndCourse(Integer studentId,Integer courseId);
 
 }

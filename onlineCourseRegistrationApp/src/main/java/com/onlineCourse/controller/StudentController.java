@@ -20,6 +20,7 @@ import com.onlineCourse.Services.CourseService;
 import com.onlineCourse.Services.StudentService;
 import com.onlineCourse.beans.CourseBean;
 import com.onlineCourse.beans.Student;
+import com.onlineCourse.exceptions.StudentNotFoundException;
 
 @Controller
 public class StudentController {
@@ -89,13 +90,41 @@ public class StudentController {
 		return "PaymentSuccess";
 	}
 	
-	@GetMapping("/courseStudentLink/{studentId}/{courseId}")
-	public String courselink(@PathVariable Integer studentId,@PathVariable Integer courseId) {
+//	@GetMapping("/courseStudentLink/{studentId}/{courseId}")
+//	public String courselink(@PathVariable Integer studentId,@PathVariable Integer courseId) {
+//		
+//		stdservice.insertCourseIdwithStudent(studentId,courseId);
+//		
+//		return "studentPage";
+//	}
+	
+	@GetMapping("/updateStuProfile/{studentId}")
+    public String updateStudentProfileLauncher(@PathVariable Integer studentId, Model model) throws StudentNotFoundException {
 		
-		stdservice.insertCourseIdwithStudent(studentId,courseId);
+		System.out.println(studentId);
 		
-		return "studentPage";
+		Student student = stdservice.getStudentById(studentId);
+		
+		System.out.println(student+"*********");
+		
+		model.addAttribute("updateStudentData", student);
+		
+		return"updateStudentProfile";
 	}
+	
+	
+	@PostMapping("/updateStudent")
+	public ModelAndView doUpdateStudent(@ModelAttribute("updateStudentData") Student student, BindingResult br) {
+		
+		if(br.hasErrors()) {
+			
+			return new ModelAndView("updateStudentProfile");
+		}
+			
+			 stdservice.updateStudent(student);
+		
+		
+		return  new ModelAndView("updateStudentSuccess");	}
 	
 	
 

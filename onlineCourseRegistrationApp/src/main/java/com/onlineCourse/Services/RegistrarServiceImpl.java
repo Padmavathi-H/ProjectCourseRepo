@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.onlineCourse.beans.Registrar;
 import com.onlineCourse.exceptions.RegistrarNotFoundException;
+import com.onlineCourse.exceptions.StudentNotFoundException;
 import com.onlineCourse.repositories.RegistrarDao;
 
 @Service
@@ -46,6 +47,16 @@ public class RegistrarServiceImpl implements RegistrarService {
 		registrardao.delete(registrar);
 		
 		return registrardao.findAll();
+	}
+	@Override
+	public Registrar getRegistrarById(Integer registrarId) throws RegistrarNotFoundException {
+		
+		return registrardao.findById(registrarId).orElseThrow(() ->new RegistrarNotFoundException("Registrar not found with Id "+registrarId) );
+	}
+	@Override
+	public Registrar updateRegistrar(Registrar registrar) {
+		
+		return registrardao.save(registrar);
 	}
 
 }

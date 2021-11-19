@@ -14,6 +14,10 @@ public interface RegistrarService {
 	public List<Registrar> getAllRegistarDetails();
 
 	public List<Registrar> deleteRegistrarById(Integer registrarId)throws RegistrarNotFoundException;
+
+	public Registrar getRegistrarById(Integer registrarId) throws RegistrarNotFoundException;
+
+	public Registrar updateRegistrar(Registrar registrar);
 	
 	
 

@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.onlineCourse.beans.CourseBean;
 import com.onlineCourse.beans.Student;
+import com.onlineCourse.exceptions.CourseNotFoundException;
+import com.onlineCourse.exceptions.StudentNotFoundException;
 import com.onlineCourse.repositories.CourseDao;
 import com.onlineCourse.repositories.StudentDao;
 
@@ -30,14 +32,26 @@ public class StudentServiceImpl  implements StudentService{
 	}
 
 	@Override
-	public void insertCourseIdwithStudent(Integer studentId, Integer courseId) {
+	public Student getStudentById(Integer studentId)throws StudentNotFoundException {
 		
-		Student st=new Student();
-		
-		//studentdao.courseLinkwithStudent(studentId,courseId);
-		studentdao.savestudentAndCourse(studentId,courseId);
+		return studentdao.findById(studentId).orElseThrow(() ->new StudentNotFoundException("Student not found with Id "+studentId) );
+	}
+
+	@Override
+	public Student updateStudent(Student student) {
+		return studentdao.save(student);
 		
 	}
+
+//	@Override
+//	public void insertCourseIdwithStudent(Integer studentId, Integer courseId) {
+//		
+//		Student st=new Student();
+//		
+//		//studentdao.courseLinkwithStudent(studentId,courseId);
+//		studentdao.savestudentAndCourse(studentId,courseId);
+//		
+//	}
 
 	
 	

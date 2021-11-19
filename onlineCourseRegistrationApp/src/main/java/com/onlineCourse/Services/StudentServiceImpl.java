@@ -1,6 +1,7 @@
 package com.onlineCourse.Services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,9 @@ public class StudentServiceImpl  implements StudentService{
 	
 	@Autowired
 	private StudentDao studentdao;
+	
+	@Autowired
+	private CourseDao  coursedao;
 	
 	
 	@Override
@@ -43,15 +47,42 @@ public class StudentServiceImpl  implements StudentService{
 		
 	}
 
-//	@Override
-//	public void insertCourseIdwithStudent(Integer studentId, Integer courseId) {
-//		
-//		Student st=new Student();
-//		
-//		//studentdao.courseLinkwithStudent(studentId,courseId);
-//		studentdao.savestudentAndCourse(studentId,courseId);
-//		
-//	}
+    @Override
+	public void insertCourseIdwithStudent(Integer studentId, Integer courseId) {
+		
+        CourseBean ct=coursedao.findById(courseId).get();
+        
+        ct.setcId(ct.getcId());
+        ct.setcName(ct.getcName());
+        ct.setcDuration(ct.getcDuration());
+        ct.setcFees(ct.getcCapacity());
+        ct.setcSeats(ct.getcSeats());
+        
+        Student st=studentdao.findById(studentId).get();
+        
+        st.setStudid(st.getStudid());
+        st.setStudname(st.getStudname());
+        st.setStudemail(st.getStudemail());
+        st.setGender(st.getGender());
+        st.setStudaddress(st.getStudaddress());
+        st.setStudmobile(st.getStudmobile());
+        st.setStudDOB(st.getStudDOB());
+        st.setStudpass(st.getStudpass());
+        st.setStudcpass(st.getStudcpass());
+        
+       
+        st.getCourses().add(ct);
+        ct.getStudent().add(st);
+
+
+		studentdao.save(st);	
+	}
+
+	@Override
+	public Student getMyCourses(Integer studentId) {
+	
+		return studentdao.findById(studentId).get();
+	}
 
 	
 	

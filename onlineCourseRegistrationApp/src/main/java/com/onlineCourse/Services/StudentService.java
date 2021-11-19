@@ -16,7 +16,9 @@ public interface StudentService {
 
 	public Student updateStudent(Student student);
 
-	//public void insertCourseIdwithStudent(Integer studentId, Integer courseId);
+	public void insertCourseIdwithStudent(Integer studentId, Integer courseId);
+
+	public Student getMyCourses(Integer studentId);
 	
 	
 

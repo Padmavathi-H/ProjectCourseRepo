@@ -21,7 +21,7 @@
 
 <div style="align:left;margin-left: 10px;margin-top:15px">
 
-<f:form action="/insertCourse" method="post" modelAttribute="insCourse">
+<f:form action="/insertCourse" method="post" modelAttribute="insCourse" >
 
 Course Name : <f:input path="cName"/> <f:errors path="cName"/> <br><br>
 
@@ -33,7 +33,7 @@ Course Capacity : <f:input path="cCapacity"/> <f:errors path="cCapacity"/><br><b
 
 Seats available: <f:input path="cSeats"/> <f:errors path="cSeats"/><br><br>
 
-<input type="submit" value="InsertCourse" />
+<input type="submit" value="InsertCourse" onclick=" return alert('Course Inserted Successfully')" />
 
 </f:form>
 

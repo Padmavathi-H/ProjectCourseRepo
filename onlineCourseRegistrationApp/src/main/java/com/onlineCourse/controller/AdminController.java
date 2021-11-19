@@ -119,5 +119,28 @@ public class AdminController {
 	}
 
 	
+	@GetMapping("/getregistrarbyemail")
+	public String getregistrarbyusernameLauncher() {
+
+
+	return "getregistrarbyemail";
+
+	}
+
+
+	@PostMapping("/registrardisplay")
+	public ModelAndView registrardisplaylaunch(String email) {
+
+
+
+	Registrar registrar= service.getRegistrarByEmail(email);
+
+
+	ModelAndView mv=new ModelAndView("registrarDetails","reg",registrar);
+
+	return mv;
+
+	}
+	
 	
 }

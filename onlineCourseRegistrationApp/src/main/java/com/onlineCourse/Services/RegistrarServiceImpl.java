@@ -58,5 +58,9 @@ public class RegistrarServiceImpl implements RegistrarService {
 		
 		return registrardao.save(registrar);
 	}
+	@Override
+	public Registrar getRegistrarByEmail(String mail) {
+		return registrardao.findByRegEmail(mail);
+	}
 
 }

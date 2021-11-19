@@ -33,6 +33,8 @@ public class RegistrarController {
 	@Autowired
 	private RegistrarService registrarService;
 	
+	private int initialCourseCapacity=0;
+	
 	@ModelAttribute("genderList")
 	public Map<String,String> genderList(){
 		
@@ -84,6 +86,8 @@ public class RegistrarController {
 		
 		CourseBean course=courseService.getCourseById(courseId);
 		
+		initialCourseCapacity =course.getcCapacity();
+		
 		model.addAttribute("Course",course);
 		
 		return "editCourseForm";
@@ -93,6 +97,14 @@ public class RegistrarController {
 	@PostMapping("/editCoursedDetails")
 	public ModelAndView updatedCourse(@Valid @ModelAttribute("Course")CourseBean course,BindingResult br) {
 	
+	
+		   Integer finalCourseCapacity=course.getcCapacity();
+		   
+		   Integer courseCapacity=finalCourseCapacity-initialCourseCapacity;
+		   
+		   Integer finalseats=course.getcSeats()+courseCapacity;
+		
+	       course.setcSeats(finalseats);
          
 			if(br.hasErrors()) {
 			
@@ -100,31 +112,14 @@ public class RegistrarController {
 		}
 			
 			else {
+				
 			  
-				courseService.updateCourse(course);
+				 courseService.updateCourse(course);
 				
 				return new ModelAndView("updateCourseSuccess");  
 			
 			}
 		
-/*
-			else {
-       
-				CourseBean correctionBean=courseService.updateCourse(course);
-        
-              if(correctionBean.getC_Capacity()==course.getC_Capacity()) {
-        	
-            	  return new ModelAndView("editCourseForm","flag","Capacity can not be decreased!..");       	   
-             }
-        
-              else {	
-        	 
-            	  return new ModelAndView("updateCourseSuccess");   	
-             }
-        
-			}
-			
-			*/
         
 	}
 	

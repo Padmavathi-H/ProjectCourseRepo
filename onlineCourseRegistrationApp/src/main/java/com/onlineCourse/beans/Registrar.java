@@ -17,122 +17,119 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 @Entity
 public class Registrar {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer regId;
 
+	@NotEmpty(message = "Name is mandatory")
+	@Size(min = 3, message = "Minimum size should be 3 charecter")
+	private String regName;
 
-@Id
-@GeneratedValue(strategy=GenerationType.AUTO)
-private Integer regId;
+	@Email(message = "Enter Valid Email Address")
+	private String regEmail;
 
-@NotEmpty(message = "Name is mandatory")
-@Size(min=3,message = "Minimum size should be 3 charecter")
-private String  regName;
+	@Past(message = "Date should in the past")
+	@DateTimeFormat(iso = ISO.DATE)
+	private LocalDate regDob;
 
-@Email(message = "Enter Valid Email Address")
-private String  regEmail;
+	@NotEmpty(message = "must slecet gender")
+	private String regGender;
 
-@Past(message="Date should in the past")
-@DateTimeFormat(iso=ISO.DATE)
-private LocalDate  regDob;
+	private String regMobile;
 
-@NotEmpty(message="must slecet gender")
-private String  regGender;
+	private String regYOExp;
 
-private String regMobile;
+	private String regPass;
 
-private String  regYOExp;
+	public Registrar() {
 
-private String  regPass;
+	}
 
-public Registrar()
-{
+	public Registrar(Integer regId,
+			@NotEmpty(message = "Name is mandatory") @Size(min = 3, message = "Minimum size should be 3 charecter") String regName,
+			@Email(message = "Enter Valid Email Address") String regEmail,
+			@Past(message = "Date should in the past") LocalDate regDob,
+			@NotEmpty(message = "must slecet gender") String regGender, String regMobile, String regYOExp,
+			String regPass) {
+		super();
+		this.regId = regId;
+		this.regName = regName;
+		this.regEmail = regEmail;
+		this.regDob = regDob;
+		this.regGender = regGender;
+		this.regMobile = regMobile;
+		this.regYOExp = regYOExp;
+		this.regPass = regPass;
+	}
 
-}
+	public Integer getRegId() {
+		return regId;
+	}
 
-public Registrar(Integer regId,
-@NotEmpty(message = "Name is mandatory") @Size(min = 3, message = "Minimum size should be 3 charecter") String regName,
-@Email(message = "Enter Valid Email Address") String regEmail,
-@Past(message = "Date should in the past") LocalDate regDob,
-@NotEmpty(message = "must slecet gender") String regGender, String regMobile, String regYOExp,
-String regPass) {
-super();
-this.regId = regId;
-this.regName = regName;
-this.regEmail = regEmail;
-this.regDob = regDob;
-this.regGender = regGender;
-this.regMobile = regMobile;
-this.regYOExp = regYOExp;
-this.regPass = regPass;
-}
+	public void setRegId(Integer regId) {
+		this.regId = regId;
+	}
 
-public Integer getRegId() {
-return regId;
-}
+	public String getRegName() {
+		return regName;
+	}
 
-public void setRegId(Integer regId) {
-this.regId = regId;
-}
+	public void setRegName(String regName) {
+		this.regName = regName;
+	}
 
-public String getRegName() {
-return regName;
-}
+	public String getRegEmail() {
+		return regEmail;
+	}
 
-public void setRegName(String regName) {
-this.regName = regName;
-}
+	public void setRegEmail(String regEmail) {
+		this.regEmail = regEmail;
+	}
 
-public String getRegEmail() {
-return regEmail;
-}
+	public LocalDate getRegDob() {
+		return regDob;
+	}
 
-public void setRegEmail(String regEmail) {
-this.regEmail = regEmail;
-}
+	public void setRegDob(LocalDate regDob) {
+		this.regDob = regDob;
+	}
 
-public LocalDate getRegDob() {
-return regDob;
-}
+	public String getRegGender() {
+		return regGender;
+	}
 
-public void setRegDob(LocalDate regDob) {
-this.regDob = regDob;
-}
+	public void setRegGender(String regGender) {
+		this.regGender = regGender;
+	}
 
-public String getRegGender() {
-return regGender;
-}
+	public String getRegMobile() {
+		return regMobile;
+	}
 
-public void setRegGender(String regGender) {
-this.regGender = regGender;
-}
+	public void setRegMobile(String regMobile) {
+		this.regMobile = regMobile;
+	}
 
-public String getRegMobile() {
-return regMobile;
-}
+	public String getRegYOExp() {
+		return regYOExp;
+	}
 
-public void setRegMobile(String regMobile) {
-this.regMobile = regMobile;
-}
+	public void setRegYOExp(String regYOExp) {
+		this.regYOExp = regYOExp;
+	}
 
-public String getRegYOExp() {
-return regYOExp;
-}
+	public String getRegPass() {
+		return regPass;
+	}
 
-public void setRegYOExp(String regYOExp) {
-this.regYOExp = regYOExp;
-}
+	public void setRegPass(String regPass) {
+		this.regPass = regPass;
+	}
 
-public String getRegPass() {
-return regPass;
-}
-
-public void setRegPass(String regPass) {
-this.regPass = regPass;
-}
-
-@Override
-public String toString() {
-return "Registrar [regId=" + regId + ", regName=" + regName + ", regEmail=" + regEmail + ", regDob=" + regDob
-+ ", regGender=" + regGender + ", regMobile=" + regMobile + ", regYOExp=" + regYOExp + ", regPass="
-+ regPass + "]";
-}
+	@Override
+	public String toString() {
+		return "Registrar [regId=" + regId + ", regName=" + regName + ", regEmail=" + regEmail + ", regDob=" + regDob
+				+ ", regGender=" + regGender + ", regMobile=" + regMobile + ", regYOExp=" + regYOExp + ", regPass="
+				+ regPass + "]";
+	}
 }

@@ -44,24 +44,8 @@ public class CourseServiceImpl implements CourseService {
 	@Override
 	public CourseBean updateCourse(CourseBean course) {
 		
-
-		Integer initialcapacity=course.getcCapacity();
-		
-		CourseBean updatedcourse=courseDao.save(course);
-		
-		Integer finalcapacity=updatedcourse.getcCapacity();
-		
-		if(finalcapacity<initialcapacity) {
-			return course;
-		}
-		else {
-			return updatedcourse;
-		}
-		
-		
-		
-		
-		
+		return courseDao.save(course);
+			
 		 
 	}
 

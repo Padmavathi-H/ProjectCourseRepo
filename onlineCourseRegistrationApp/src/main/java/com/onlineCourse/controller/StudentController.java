@@ -90,22 +90,22 @@ public class StudentController {
 		return "PaymentSuccess";
 	}
 	
-//	@GetMapping("/courseStudentLink/{studentId}/{courseId}")
-//	public String courselink(@PathVariable Integer studentId,@PathVariable Integer courseId) {
-//		
-//		stdservice.insertCourseIdwithStudent(studentId,courseId);
-//		
-//		return "studentPage";
-//	}
+	@GetMapping("/courseStudentLink/{studentId}/{courseId}")
+	public String courselink(@PathVariable Integer studentId,@PathVariable Integer courseId) {
+		
+		
+		stdservice.insertCourseIdwithStudent(studentId,courseId);
+		
+		return "studentPage";
+	}
 	
 	@GetMapping("/updateStuProfile/{studentId}")
     public String updateStudentProfileLauncher(@PathVariable Integer studentId, Model model) throws StudentNotFoundException {
 		
-		System.out.println(studentId);
+		
 		
 		Student student = stdservice.getStudentById(studentId);
 		
-		System.out.println(student+"*********");
 		
 		model.addAttribute("updateStudentData", student);
 		
@@ -124,7 +124,25 @@ public class StudentController {
 			 stdservice.updateStudent(student);
 		
 		
-		return  new ModelAndView("updateStudentSuccess");	}
+		return  new ModelAndView("updateStudentSuccess");	
+		
+	}
+	
+	@GetMapping("/myCourses/{studentId}")
+	public String mycourseLauncher(@PathVariable Integer studentId,Model model) {
+		
+		Student studentdata=stdservice.getMyCourses(studentId);
+		
+		System.out.println(studentdata);
+		
+		List<CourseBean> courses=studentdata.getCourses();
+		
+		System.out.println(courses);
+		
+		model.addAttribute("studentCourseData",courses);
+		
+		return "studentMyCourse";
+	}
 	
 	
 

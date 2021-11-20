@@ -29,11 +29,6 @@ public class CourseServiceImpl implements CourseService {
 		return courseDao.save(course);
 	}
 
-	@Override
-	public List<CourseBean> viewCourses() {
-		
-		return courseDao.findAll();
-	}
 
 	@Override
 	public CourseBean getCourseById(Integer courseId) throws CourseNotFoundException {
@@ -51,6 +46,13 @@ public class CourseServiceImpl implements CourseService {
 
 	@Override
 	public List<CourseBean> getCoursesForStudents() {
+		
+		return courseDao.findAll();
+	}
+
+
+	@Override
+	public List<CourseBean> viewCourses() {
 		
 		return courseDao.findAll();
 	}

@@ -15,7 +15,7 @@ public interface CourseService {
 	
 	public CourseBean insertCourse(CourseBean course);
 	
-	public List<CourseBean> viewCourses();
+	
 	
 
 	public CourseBean getCourseById(Integer courseId)throws CourseNotFoundException;
@@ -23,6 +23,8 @@ public interface CourseService {
 	public CourseBean updateCourse(CourseBean course);
 
 	public List<CourseBean> getCoursesForStudents();
+
+	public List<CourseBean> viewCourses();
 
 
 }

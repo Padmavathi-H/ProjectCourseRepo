@@ -15,7 +15,7 @@
 <img style="width: 50px;height: 50px;float: left;margin-left: 10px; margin-top: 10px" onclick="goBack()" alt="backbutton" src="<%=request.getContextPath()%>/images/backbutton.png">
 
 
-<h1 align="center">Existing Courses</h1>
+<h1 align="center">Courses for ${regData.regName }</h1>
 <hr>
 </div>
 

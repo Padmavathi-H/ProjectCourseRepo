@@ -9,6 +9,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -46,8 +47,8 @@ public class RegistrarController {
 	    return map;
 	}
 	
-	@GetMapping("/addNewCoursePage")
-	public String newCoursePageLaunch(Model model) {
+	@GetMapping("/addNewCoursePage/{registrarId}")
+	public String newCoursePageLaunch(@PathVariable Integer registrarId,Model model) {
 		
 		CourseBean course = new CourseBean();
 		
@@ -56,8 +57,8 @@ public class RegistrarController {
 		return "addNewCourse";
 	}
 	
-	@PostMapping("/insertCourse")
-	public ModelAndView doInsertCourse(@Valid @ModelAttribute("insCourse") CourseBean course,BindingResult br) {
+	@PostMapping("/insertCourse/{registrarId}")
+	public ModelAndView doInsertCourse(@PathVariable Integer registrarId ,@Valid @ModelAttribute("insCourse") CourseBean course,BindingResult br) {
 		
 		if(br.hasErrors()) {
 			return new ModelAndView("addNewCourse");
@@ -65,19 +66,32 @@ public class RegistrarController {
 		
 		CourseBean savedCourse = courseService.insertCourse(course);
 		
+		Integer courseId = savedCourse.getcId();
+		
+		System.out.println(courseId);
+		
+		registrarService.insertCourseIdwithRegistrar(registrarId,courseId);
+		
 		ModelAndView mv = new ModelAndView("insertedCourse","course",savedCourse);
         
 		return mv;
 	}
 	
-	@GetMapping("/viewCoursePage")
-	public String viewCoursePageLaunch(Model model) {
+	@GetMapping("/viewCoursePage/{registrarId}")
+	public String viewCoursePageLaunch(@PathVariable Integer registrarId,ModelMap map) {
 		
-		List<CourseBean> courseList = courseService.viewCourses();
+		System.out.print(registrarId);
 		
-		model.addAttribute("viewCourse", courseList);
+		 Registrar registrardata = registrarService.viewCoursesByRegId(registrarId);
+		 
 		
-		return "viewCourses";
+		 List<CourseBean> courseList = registrardata.getCourses();
+		 
+		 map.addAttribute("viewCourse", courseList);
+		 
+		 map.addAttribute("regData", registrardata);
+		
+		 return "viewCoursesForRegistrar";
 	}
 	
 	

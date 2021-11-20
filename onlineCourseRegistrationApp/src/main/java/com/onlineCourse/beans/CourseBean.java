@@ -48,27 +48,21 @@ public class CourseBean {
 	@ManyToMany(cascade=CascadeType.ALL)
 	private List<Student> student=new ArrayList<>();
 
-
+	@ManyToMany(cascade=CascadeType.ALL)
+	private List<Registrar> registrar=new ArrayList<>();
 	
 	
-	
-	
-	@Override
-	public String toString() {
-		return "CourseBean [cId=" + cId + ", cName=" + cName + ", cDuration=" + cDuration + ", cFees=" + cFees
-				+ ", cCapacity=" + cCapacity + ", cSeats=" + cSeats + ", student=" + student + "]";
-	}
-
 
 	public CourseBean() {
 		super();
 	}
 
 
+
 	public CourseBean(Integer cId, @NotEmpty(message = "Mandotory") String cName,
 			@NotEmpty(message = "Mandotory") String cDuration, @NotNull(message = "Mandotory") Integer cFees,
 			@NotNull(message = "Mandotory") Integer cCapacity, @NotNull(message = "Mandotory") Integer cSeats,
-			List<Student> student) {
+			List<Student> student, List<Registrar> registrar) {
 		super();
 		this.cId = cId;
 		this.cName = cName;
@@ -77,7 +71,9 @@ public class CourseBean {
 		this.cCapacity = cCapacity;
 		this.cSeats = cSeats;
 		this.student = student;
+		this.registrar = registrar;
 	}
+
 
 
 	public Integer getcId() {
@@ -85,9 +81,11 @@ public class CourseBean {
 	}
 
 
+
 	public void setcId(Integer cId) {
 		this.cId = cId;
 	}
+
 
 
 	public String getcName() {
@@ -95,9 +93,11 @@ public class CourseBean {
 	}
 
 
+
 	public void setcName(String cName) {
 		this.cName = cName;
 	}
+
 
 
 	public String getcDuration() {
@@ -105,9 +105,11 @@ public class CourseBean {
 	}
 
 
+
 	public void setcDuration(String cDuration) {
 		this.cDuration = cDuration;
 	}
+
 
 
 	public Integer getcFees() {
@@ -115,9 +117,11 @@ public class CourseBean {
 	}
 
 
+
 	public void setcFees(Integer cFees) {
 		this.cFees = cFees;
 	}
+
 
 
 	public Integer getcCapacity() {
@@ -125,9 +129,11 @@ public class CourseBean {
 	}
 
 
+
 	public void setcCapacity(Integer cCapacity) {
 		this.cCapacity = cCapacity;
 	}
+
 
 
 	public Integer getcSeats() {
@@ -135,9 +141,11 @@ public class CourseBean {
 	}
 
 
+
 	public void setcSeats(Integer cSeats) {
 		this.cSeats = cSeats;
 	}
+
 
 
 	public List<Student> getStudent() {
@@ -145,9 +153,34 @@ public class CourseBean {
 	}
 
 
+
 	public void setStudent(List<Student> student) {
 		this.student = student;
 	}
+
+
+
+	public List<Registrar> getRegistrar() {
+		return registrar;
+	}
+
+
+
+	public void setRegistrar(List<Registrar> registrar) {
+		this.registrar = registrar;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "CourseBean [cId=" + cId + ", cName=" + cName + ", cDuration=" + cDuration + ", cFees=" + cFees
+				+ ", cCapacity=" + cCapacity + ", cSeats=" + cSeats + ", student=" + student + ", registrar="
+				+ registrar + "]";
+	}
+
+    
+
 
 
 

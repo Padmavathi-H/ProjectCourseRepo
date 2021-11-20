@@ -20,6 +20,10 @@ public interface RegistrarService {
 	public Registrar updateRegistrar(Registrar registrar);
 
 	public Registrar getRegistrarByEmail(String email);
+
+	public void insertCourseIdwithRegistrar(Integer registrarId, Integer courseId);
+
+	public Registrar viewCoursesByRegId(Integer registrarId);
 	
 	
 

@@ -1,11 +1,15 @@
 package com.onlineCourse.beans;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Past;
@@ -40,17 +44,22 @@ public class Registrar {
 	private String regYOExp;
 
 	private String regPass;
+	
+	@ManyToMany(cascade=CascadeType.ALL,mappedBy="registrar")
+	private List<CourseBean> courses=new ArrayList<>();
 
 	public Registrar() {
 
 	}
+
+	
 
 	public Registrar(Integer regId,
 			@NotEmpty(message = "Name is mandatory") @Size(min = 3, message = "Minimum size should be 3 charecter") String regName,
 			@Email(message = "Enter Valid Email Address") String regEmail,
 			@Past(message = "Date should in the past") LocalDate regDob,
 			@NotEmpty(message = "must slecet gender") String regGender, String regMobile, String regYOExp,
-			String regPass) {
+			String regPass, List<CourseBean> courses) {
 		super();
 		this.regId = regId;
 		this.regName = regName;
@@ -60,7 +69,10 @@ public class Registrar {
 		this.regMobile = regMobile;
 		this.regYOExp = regYOExp;
 		this.regPass = regPass;
+		this.courses = courses;
 	}
+
+
 
 	public Integer getRegId() {
 		return regId;
@@ -125,11 +137,20 @@ public class Registrar {
 	public void setRegPass(String regPass) {
 		this.regPass = regPass;
 	}
+	
+	
 
-	@Override
-	public String toString() {
-		return "Registrar [regId=" + regId + ", regName=" + regName + ", regEmail=" + regEmail + ", regDob=" + regDob
-				+ ", regGender=" + regGender + ", regMobile=" + regMobile + ", regYOExp=" + regYOExp + ", regPass="
-				+ regPass + "]";
+	public List<CourseBean> getCourses() {
+		return courses;
 	}
+
+
+
+	public void setCourses(List<CourseBean> courses) {
+		this.courses = courses;
+	}
+
+
+
+	
 }

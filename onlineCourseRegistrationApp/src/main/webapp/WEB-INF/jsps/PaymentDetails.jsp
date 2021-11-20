@@ -1,89 +1,118 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Payment Page</title>
-<style>
-body{
-background-color: wheat
-}
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
 
-*{
-box-sizing: border-box;
-}
+    <!-- Title Page-->
+    <title>Payment Page</title>
+<script type="text/javascript" src="/js/backbtn.js"></script>
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-.container{
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
-padding: 20px;
-background-color: wheat;
-width:100%
-}
-
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-button[type=submit]
-{
-font-size: 40
-
-}
-
-hr{
-border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-.paybtn{
- background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  margin: 20px 0;
-  border: none;
-  cursor: pointer;
-  width: 25%;
-  opacity: 0.9;
-}
-
-
-</style>
+    <!-- Main CSS-->
+    <link href="/Css/main.css" rel="stylesheet" media="all">
+    <script type="text/javascript" src="/js/backbtn.js"></script>
 </head>
+
 <body>
-<hr>
+<%@taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
 
-<form action="/payment/${studentId}/${courseId}" method="post">
-<h2 align="center">PAYMENT DETAILS</h2>
-<hr>
-<h1>Payment for courseId: ${courseId}</h1>
-<div align="center" class="container">
-<table>
-<tr><td>Card Holder Name:</td></tr>
-<tr><td><input type="text" name="name" placeholder="Name" required></td></tr>
-<tr></tr>
-<tr><td>Card Number:</td></tr>
-<tr><td><input type="text" name="number" placeholder="1234 1234 1234 1234" required min="12" max="12"></td></tr>
-<tr></tr>
-<tr><td>Expiry Date:</td></tr>
-<tr><td><input type="text" name="month" placeholder="MM"required maxlength="2"></td>
-<td><input type="text" name="year" placeholder="YY"required maxlength="2"></td></tr>
-<tr></tr>
-<tr><td>CVV:</td></tr>
-<tr><td><input type="password" name="cvv" placeholder="CVV"required maxlength="3"></td></tr>
 
-</table>
-<br>
-<button type ="submit" class="paybtn" >PAY</button>
+<div style="flex-direction: row">
+<img style="width: 50px;height: 50px;float: left;margin-left: 10px; margin-top: 10px" onclick="goBack()" alt="backbutton" src="<%=request.getContextPath()%>/images/backbutton.png">
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h1 class="title">PAYMENT DETAILS</h1>
+                    <h4>Payment for Course Id: ${courseId}</h4><br>
+                    <f:form action="/payment/${studentId}/${courseId}" method="post" >
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Card Holder Name</label>
+                                    <input type="text" name="name"  class="input--style-4" required> 
+                                </div>
+                            </div>
+                        </div>
+                         <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Card Number</label>
+                                    <input type="text" name="number"  required min="12" max="12" class="input--style-4">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space" >
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Expiry Date</label>
+                                    
+                                </div>
+                            </div>
+                            </div>
+                            <div class="row row-space">
+                             <div class="col-2">
+                                <div class="input-group">
+					 <input type="text" name="month" placeholder="MM"required maxlength="2" class="input--style-4">
+                              
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+					  <input type="text" name="year" placeholder="YY" required maxlength="2" class="input--style-4">
+                              
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">CVV</label>
+                                    <input type="password" name="cvv" required maxlength="3" class="input--style-4">
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="p-t-15">
+                            
+                            <a href="/courseStudentLink/${studentId}/${courseId}"><button type="button" class="btn btn--radius-2 btn--blue" >PAY</button></a>
+                        </div>
+                    </f:form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</div>
-</form>
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
 
-</body>
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
 </html>
+<!-- end document-->
 
 
 

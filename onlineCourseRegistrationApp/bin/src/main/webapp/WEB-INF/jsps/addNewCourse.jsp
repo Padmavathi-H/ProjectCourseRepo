@@ -21,7 +21,7 @@
 
 <div style="align:left;margin-left: 10px;margin-top:15px">
 
-<f:form action="/insertCourse" method="post" modelAttribute="insCourse" >
+<f:form action="/insertCourse/${registrarId }" method="post" modelAttribute="insCourse" >
 
 Course Name : <f:input path="cName"/> <f:errors path="cName"/> <br><br>
 

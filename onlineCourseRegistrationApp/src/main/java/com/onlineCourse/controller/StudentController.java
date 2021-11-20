@@ -83,12 +83,12 @@ public class StudentController {
 		
 	}
 	
-	@PostMapping("/payment/{studentId}/{courseId}")
+	/*@PostMapping("/payment/{studentId}/{courseId}")
 	public String doPayment(@PathVariable Integer studentId,@PathVariable Integer courseId,Model model)
 	{
 		
 		return "PaymentSuccess";
-	}
+	}*/
 	
 	@GetMapping("/courseStudentLink/{studentId}/{courseId}")
 	public String courselink(@PathVariable Integer studentId,@PathVariable Integer courseId) {
@@ -96,7 +96,7 @@ public class StudentController {
 		
 		stdservice.insertCourseIdwithStudent(studentId,courseId);
 		
-		return "studentPage";
+		return "PaymentSuccess";
 	}
 	
 	@GetMapping("/updateStuProfile/{studentId}")

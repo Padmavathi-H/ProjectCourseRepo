@@ -10,18 +10,17 @@
 </head>
 <body>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<script type="text/javascript" src="/js/backbtn.js"></script>
 <div style="flex-direction: row">
 <img style="width: 50px;height: 50px;float: left;margin-left: 10px; margin-top: 10px" onclick="goBack()" alt="backbutton" src="<%=request.getContextPath()%>/images/backbutton.png">
-
-
-<h1 align="center">Courses</h1>
-<hr>
 </div>
+<br><br>
+<h1 align="center" style="color:purple;font-family: serif" ><b>EXISTING COURSES</b></h1>
 
-<table class="table">
-  <thead>
-    <tr>
+<br><br>
+<table class="table table-striped" style="color:purple">
+<thead>
+<tr>
       <th scope="col">Course ID</th>
       <th scope="col">Course Name</th>
       <th scope="col">Course Duration</th>
@@ -36,13 +35,13 @@
     <c:forEach var="course" items="${viewCourse }">
     
     <tr>
-      <th scope="row"><c:out value="${course.cId }"></c:out></th>
-      <td><c:out value="${course.cName }"></c:out> </td>
-      <td><c:out value="${course.cDuration }"></c:out> </td>
-   	  <td><c:out value="${course.cFees }"></c:out> </td>
-   	  <td><c:out value="${course.cCapacity }"></c:out> </td>
-   	  <td><c:out value="${course.cSeats }"></c:out> </td>
-   	  
+      <th scope="row"><c:out value="${course.c_Id }"></c:out></th>
+      <td><c:out value="${course.c_Name }"></c:out> </td>
+      <td><c:out value="${course.c_Duration }"></c:out> </td>
+   	  <td><c:out value="${course.c_Fees }"></c:out> </td>
+   	  <td><c:out value="${course.c_Capacity }"></c:out> </td>
+   	  <td><c:out value="${course.c_Seats }"></c:out> </td>
+   	  <td> <a class="btn btn-light" href="editCourse/${course.c_Id }"><b>EDIT</b></a></td>
    	 
     </tr>
     

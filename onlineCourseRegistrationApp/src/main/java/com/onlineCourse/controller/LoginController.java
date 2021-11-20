@@ -35,7 +35,7 @@ public class LoginController {
 
 		Map<String, String> map = new HashMap<String, String>();
 
-		map.put("", "Select a LoginOption");
+		map.put("", "Login As");
 		map.put("admin", "Admin");
 		map.put("registrar", "Registrar");
 		map.put("student", "Student");
@@ -45,6 +45,12 @@ public class LoginController {
 	}
 	
 	@GetMapping("/")
+	public String launcher()
+	{
+		return "titlepage";
+	}
+	
+	@GetMapping("/homepage")
 	public String homeLauncher(Model model) {
 		
 	    LoginBean logBean=new LoginBean();

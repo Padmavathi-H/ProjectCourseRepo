@@ -4,17 +4,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Registrar By Email</title>
+<title>Get Student By CourseName</title>
 </head>
 <body bgcolor="pink">
 
-<h1 align="center">GETTING REGISTRAR BY EMAIL</h1>
+<h1 align="center">GETTING STUDENT BY COURSE NAME</h1>
 <hr/>
 
 
-<form action="registrardisplay" method="post">
+<form action="studentByCourse" method="post">
 
-ENTER REGISTRAR EMAIL:  <input type="email" name="email">
+ENTER COURSE NAME:  <input type="text" name="courseName">
 
 <input type="submit" value="DISPLAY"/>
 </form>

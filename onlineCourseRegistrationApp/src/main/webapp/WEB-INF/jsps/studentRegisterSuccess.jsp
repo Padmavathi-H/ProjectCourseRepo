@@ -15,9 +15,5 @@
 <br>
 <h1 align="center" style="font-family: serif; color:purple"><b>WELCOME, STUDENT!!!!<b></h1>
 <img style="width: 400px;h;margin-left: 450px; margin-top: 10px" alt="success" src="/images/clapping-hands.png" >
-
-
-
-</script>
 </body>
 </html>

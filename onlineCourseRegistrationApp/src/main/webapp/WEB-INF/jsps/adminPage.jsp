@@ -15,13 +15,14 @@ width: 100%;
 color: #2B3856;
 margin-left: auto;
 margin-top: auto;
+margin-right:auto;
+margin-bottom:auto;
 }
 
 
 #intro{
-background: url("/images/.png");
--webkit-background-size:cover;
-background-size:cover;
+background: url("/images/registrar.png");
+background-repeat: round;
 }
 .btn{
 margin-left:10px;
@@ -31,13 +32,12 @@ margin-left:10px;
 <body> 
 <header>
 
-<div id="intro" class="view hm-white-light">
+<div >
 <div class="alert alert-success" role="alert">
  <h1> Hello, ${adminData.username }! Welcome to Admin Portal.</h1>
 </div>
 
 
-<div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,7 +85,7 @@ margin-left:10px;
 </header>
 
 <footer class="page-footer font-small purple pt-4 fixed-bottom">
-   <div class="footer-copyright text-center py-3"><h3>Have a nice Day!</h3>
+   <div class="footer-copyright text-center py-3"><h3>Support...Service...Succeed</h3>
     </div>
 </footer>
 </body>

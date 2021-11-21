@@ -1,0 +1,15 @@
+@charset "ISO-8859-1";
+
+#back
+{
+	flex-direction: row;
+	
+}
+
+img
+{
+	width: 5px;height: 5px;float: left;margin-left: 10px; margin-top: 10px;
+}
+
+
+

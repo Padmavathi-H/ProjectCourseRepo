@@ -10,7 +10,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Home</title>
+    <title>Login Form</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -39,12 +39,13 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 align="center" class="title"><b>LOGIN FORM</b></h2>
+                    <h3 style="color: red">${flag }</h3>
                     <f:form action="login" method="post" modelAttribute="LoginData">
                      <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Login As</label>
-                                   <f:select path="loginoption" items="${LoginOptions}" class="input--style-4"/>
+                                   <f:select path="loginoption" items="${LoginOptions}" class="input--style-4"/><f:errors path="loginoption"/>
                                 </div>
                             </div>
                         </div>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Registrar List</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script type="text/javascript" src="/js/backbtn.js"></script>
 
@@ -43,6 +43,7 @@
 <td><c:out value="${registrar.regMobile }"></c:out></td>
 <td><c:out value="${registrar.regYOExp }"></c:out></td>
 <td><c:out value="${registrar.regPass }"></c:out></td>
+<td><a class="btn btn-danger" href="deleteRegistrar?rid=${registrar.regId }"  onclick=" return confirm('Are You Sure ?')" >Delete</a></td>
 </tr>
 </c:forEach>
 </tbody>

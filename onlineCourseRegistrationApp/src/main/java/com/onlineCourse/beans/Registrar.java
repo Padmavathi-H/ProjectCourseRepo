@@ -13,6 +13,7 @@ import javax.persistence.ManyToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -25,24 +26,28 @@ public class Registrar {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer regId;
 
-	@NotEmpty(message = "Name is mandatory")
+	@NotEmpty(message = "Name is mandatory!")
 	@Size(min = 3, message = "Minimum size should be 3 charecter")
 	private String regName;
 
-	@Email(message = "Enter Valid Email Address")
+	@Email(message = "Email is mandatory!")
+	@Pattern(regexp="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-zA-Z0-9+_.-]",message="Enter Valid Email Address")
 	private String regEmail;
 
-	@Past(message = "Date should in the past")
+	@Past(message = "Date should be in the past")
 	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate regDob;
 
-	@NotEmpty(message = "must slecet gender")
+	@NotEmpty(message = "Must select gender!")
 	private String regGender;
-
+    
+	@NotEmpty(message="Must enter mobile Number!")
 	private String regMobile;
 
+	@NotEmpty(message="Must enter Experience!")
 	private String regYOExp;
-
+    
+	@NotEmpty(message="Must enter a Password!")
 	private String regPass;
 	
 	@ManyToMany(cascade=CascadeType.ALL,mappedBy="registrar")

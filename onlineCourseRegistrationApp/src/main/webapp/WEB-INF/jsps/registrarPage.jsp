@@ -16,7 +16,7 @@ margin-left:10px;
 <body> 
 
 <div class="alert alert-success" role="alert">
- <h1> Hello, Registrar!</h1>
+ <h1> Hello, ${registratData.regName }! Welcome to Registrar Portal.</h1>
 </div>
 
 

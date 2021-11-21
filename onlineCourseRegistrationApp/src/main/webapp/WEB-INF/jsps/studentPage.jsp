@@ -18,7 +18,7 @@ margin-left:10px;
 <body> 
 
 <div class="alert alert-success" role="alert">
- <h1> Hello,  ${studentData.studname }</h1>
+ <h1> Hello, ${studentData.studname }! Welcome to Student Page.</h1>
 </div>
 
 

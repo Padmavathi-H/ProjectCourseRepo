@@ -16,7 +16,7 @@ public class LoginBean {
 	@NotEmpty(message="password is mandatory")
 	private String password;
 	
-	@NotEmpty(message="loginoption is mandatory")
+	//@NotEmpty(message="loginoption is mandatory")
 	private String loginoption;
 	
 	

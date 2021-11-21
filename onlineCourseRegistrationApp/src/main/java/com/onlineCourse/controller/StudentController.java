@@ -20,6 +20,7 @@ import com.onlineCourse.Services.CourseService;
 import com.onlineCourse.Services.StudentService;
 import com.onlineCourse.beans.CourseBean;
 import com.onlineCourse.beans.Student;
+import com.onlineCourse.exceptions.CourseNotFoundException;
 import com.onlineCourse.exceptions.StudentNotFoundException;
 
 @Controller
@@ -36,8 +37,11 @@ public class StudentController {
 		
 		Map<String, String> map=new HashMap<String, String>();
 		
+		map.put("", "SELECT ONE");
 		map.put("Male", "MALE");
 		map.put("Female", "FEMALE");
+		
+		
 	
 	    return map;
 	}
@@ -83,18 +87,16 @@ public class StudentController {
 		
 	}
 	
-	/*@PostMapping("/payment/{studentId}/{courseId}")
-	public String doPayment(@PathVariable Integer studentId,@PathVariable Integer courseId,Model model)
-	{
-		
-		return "PaymentSuccess";
-	}*/
 	
 	@GetMapping("/courseStudentLink/{studentId}/{courseId}")
 	public String courselink(@PathVariable Integer studentId,@PathVariable Integer courseId) {
 		
 		
+		//CourseBean course = courseService.getCourseById(courseId);
+		
 		stdservice.insertCourseIdwithStudent(studentId,courseId);
+		
+		
 		
 		return "PaymentSuccess";
 	}

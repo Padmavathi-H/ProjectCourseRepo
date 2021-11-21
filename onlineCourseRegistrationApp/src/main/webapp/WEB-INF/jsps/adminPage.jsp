@@ -8,15 +8,32 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script type="text/javascript" src="/js/backbtn.js"></script>
 <style>
+html,body,
+header,#intro{
+height: 100%;
+width: 100%;
+color: #2B3856;
+margin-left: auto;
+margin-top: auto;
+}
+
+
+#intro{
+background: url("/images/.png");
+-webkit-background-size:cover;
+background-size:cover;
+}
 .btn{
 margin-left:10px;
 }
 </style>
 </head>
 <body> 
+<header>
 
+<div id="intro" class="view hm-white-light">
 <div class="alert alert-success" role="alert">
- <h1> Hello, Admin!</h1>
+ <h1> Hello, ${adminData.username }! Welcome to Admin Portal.</h1>
 </div>
 
 
@@ -49,6 +66,8 @@ margin-left:10px;
          <button type="button" class="btn btn-secondary  "> <a class="nav-link active" aria-current="page" href="getregistrarbyemail"><h5>Search Registrar by E-mail</h5></a></button>
          
         </li>
+        
+        <button type="button" class="btn btn-secondary "><a class="nav-link active" aria-current="page" href="viewStudentByCourse"><h5>View Students By Course</h5></a></button>
       </ul>
       </div>
       <nav class="navbar navbar-default">
@@ -89,6 +108,8 @@ margin-left:10px;
    </div>
   </main>
 </div>
+</div>
+</header>
 </body>
 </html>
 

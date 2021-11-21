@@ -14,10 +14,12 @@ import javax.persistence.ManyToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 
 @Entity
 public class Student {
@@ -26,26 +28,32 @@ public class Student {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer studid;
 	
-	@NotEmpty(message = "Name is mandatory")
-	@Size(min=3,message = "Minimum size should be 3 charecter")
+	@NotEmpty(message = "Name is mandatory!")
+	@Size(min=3,message = "Minimum characters should be 3")
 	private String  studname;
 	
-	@Email(message = "Enter Valid Email Address")
+	@Email(message = "Email is mandatory!")
+	@Pattern(regexp="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-zA-Z0-9+_.-]",message="Enter Valid Email Address")
 	private String  studemail;
 	
-	@NotEmpty(message="must select gender")
+	@NotEmpty(message="Must select gender!")
 	private String  gender;
 	
+	@NotEmpty(message="Must enter address!")
 	private String  studaddress;
 	
+	@NotEmpty(message="Must enter mobile Number!")
+	@Pattern(regexp="(^$|[0-9]{10})",message="Must enter 10 digits only!")
 	private String studmobile;
 	
-	@Past(message="Date should in the past")
+	@Past(message="Date should be in the past")
 	@DateTimeFormat(iso=ISO.DATE)
 	private LocalDate studDOB;
 	
+	@NotEmpty(message="Must enter a Password!")
 	private String studpass;
 	
+	@NotEmpty(message="Re-enter the Password!")
 	private String studcpass;
 
 	@ManyToMany(cascade=CascadeType.ALL,mappedBy="student")

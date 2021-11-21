@@ -15,6 +15,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 //course bean
 
@@ -26,23 +27,23 @@ public class CourseBean {
 	private Integer cId;
 	
 	
-	@NotEmpty(message = "Mandotory")
+	@NotEmpty(message = "Course Name is mandatory!")
 	private String cName;
 	
 	
-	@NotEmpty(message = "Mandotory")
+	@NotEmpty(message = "Must enter the Duration!")
 	private String cDuration;
 	
 	
-	@NotNull(message = "Mandotory")
+	@NotNull(message = "Must enter the Fees")
 	private Integer cFees;
 	
 	
-	@NotNull(message = "Mandotory")
+	@NotNull(message = "Must enter the Capacity!")
 	private Integer cCapacity;
 	
 	
-	@NotNull(message = "Mandotory")
+	@NotNull(message = "Must enter the Seats!")
 	private Integer cSeats;
 	
 	@ManyToMany(cascade=CascadeType.ALL)

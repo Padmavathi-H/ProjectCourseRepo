@@ -57,7 +57,7 @@ public class StudentServiceImpl  implements StudentService{
         ct.setcDuration(ct.getcDuration());
         ct.setcFees(ct.getcFees());
         ct.setcCapacity(ct.getcCapacity());
-        ct.setcSeats(ct.getcSeats());
+        ct.setcSeats(ct.getcSeats()-1);
         
         Student st=studentdao.findById(studentId).get();
         
@@ -74,7 +74,8 @@ public class StudentServiceImpl  implements StudentService{
        
         st.getCourses().add(ct);
         ct.getStudent().add(st);
-
+        
+        
 
 		studentdao.save(st);	
 	}

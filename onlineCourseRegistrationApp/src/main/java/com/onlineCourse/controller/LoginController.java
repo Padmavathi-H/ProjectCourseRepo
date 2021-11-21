@@ -96,7 +96,7 @@ public class LoginController {
         	Admin admin=loginService.authenticateAdmin(loginBean.getUsername(),loginBean.getPassword());
         	
         	if(admin!=null) {
-        	     return  new ModelAndView("adminPage");
+        	     return  new ModelAndView("adminPage","adminData",admin);
         	}
         	
         	else {
@@ -118,27 +118,29 @@ public class LoginController {
         	}
         }
         
+        else if(logOption.equals("registrar")) {
+        	Registrar registrar=loginService.authenticateRegistrar(loginBean.getUsername(), loginBean.getPassword());
+          	
+            if(registrar!=null) {
+           	 
+           	 
+         	return new ModelAndView("registrarPage","registratData",registrar);
+            }
+         	else {
+         		return new ModelAndView("home","flag","Invalid Username or password!!..");
+        	
+        	
+         	}
+        }
         
         else {
         	
-            Registrar registrar=loginService.authenticateRegistrar(loginBean.getUsername(), loginBean.getPassword());
-          	
-             if(registrar!=null) {
-            	 
-            	 
-          	return new ModelAndView("registrarPage","registratData",registrar);
-             }
-          	else {
-          		return new ModelAndView("home","flag","Invalid Username or password!!..");
-          	}
-          	
-          }
-        
-        
+        	return new ModelAndView("home","flag","Must select one option!");
+        }
       
 		}
 		
-		
+	        
 	}
 	
 }

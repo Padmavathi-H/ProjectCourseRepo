@@ -60,7 +60,7 @@ margin-left:10px;
 
 
 <footer class="page-footer font-small purple pt-4 fixed-bottom">
-   <div class="footer-copyright text-center py-3"><h3>Have a nice Day!</h3>
+   <div class="footer-copyright text-center py-3"><h3>Passion...Purpose...Progress</h3>
     </div>
 </footer>
 

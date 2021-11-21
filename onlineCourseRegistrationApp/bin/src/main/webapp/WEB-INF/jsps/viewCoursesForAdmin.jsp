@@ -40,9 +40,7 @@
       <td><c:out value="${course.cDuration }"></c:out> </td>
    	  <td><c:out value="${course.cFees }"></c:out> </td>
    	  <td><c:out value="${course.cCapacity }"></c:out> </td>
-   	  <td><c:out value="${course.cSeats }"></c:out> </td>
-   	  <td> <a class="btn btn-light" href="editCourse/${course.cId }"><b>EDIT</b></a></td>
-   	 
+   	  <td><c:out value="${course.cSeats }"></c:out> </td>  	 
     </tr>
     
     </c:forEach>

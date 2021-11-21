@@ -38,7 +38,7 @@
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
-                    <h1 class="title">PAYMENT DETAILS</h1>
+                    <h1 class="title" align="center">PAYMENT DETAILS</h1>
                     <h4>Payment for Course Id: ${courseId}</h4><br>
                     <f:form action="/payment/${studentId}/${courseId}" method="post" >
                         <div class="row row-space">

@@ -26,6 +26,7 @@ import com.onlineCourse.beans.Registrar;
 import com.onlineCourse.beans.Student;
 import com.onlineCourse.exceptions.RegistrarNotFoundException;
 
+// Admin
 @Controller
 public class AdminController {
 

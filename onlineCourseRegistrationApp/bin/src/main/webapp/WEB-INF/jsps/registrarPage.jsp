@@ -49,15 +49,12 @@ margin-left:10px;
   </div>
 </nav>
 
-
-
 </div>
 
 <footer class="page-footer font-small purple pt-4 fixed-bottom">
-   <div class="footer-copyright text-center py-3"><h3>Have a nice Day!</h3>
+   <div class="footer-copyright text-center py-3"><h3>Guide...Grow...Glow </h3>
     </div>
 </footer>
-
 
 </body>
 </html>

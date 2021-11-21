@@ -59,27 +59,10 @@ margin-left:10px;
 </div>
 
 
-<div class="container my-4">
 <footer class="page-footer font-small purple pt-4 fixed-bottom">
-  <div class="container-fluid text-center text-md-left">
-   <div class="row">
-      <div class="col-md-6 mt-md-0 mt-3">
-      </div>
-      <hr class="clearfix w-100 d-md-none pb-3">
-      <div class="col-md-3 mb-md-0 mb-3">
-      </div>
-        <div class="col-md-3 mb-md-0 mb-3">
-      </div>
-     </div>
-    </div>
    <div class="footer-copyright text-center py-3"><h3>Have a nice Day!</h3>
     </div>
-  </footer>
-  <main>
-    <div class="container-fluid">
-   </div>
-  </main>
-
+</footer>
 
 
 </body>

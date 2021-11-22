@@ -15,7 +15,7 @@
 <br>
 <br>
 
-<h1 align="center" style="font-family: serif; color:purple"><b>${StudentData.studname} your payment is successfull for enrolling in course ${CourseData.cName}!<b></h1>
+<h1 align="center" style="font-family: serif; color:purple">${StudentData.studname} your payment is successfull for enrolling in course ${CourseData.cName}!</h1>
 <img style="width: 400px;h;margin-left: 450px; margin-top: 10px" alt="success" src="/images/clapping-hands.png" >
 
 </body>

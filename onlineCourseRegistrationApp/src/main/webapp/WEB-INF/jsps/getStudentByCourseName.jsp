@@ -12,25 +12,25 @@
 <meta name="author" content="Colorlib">
 <meta name="keywords" content="Colorlib Templates">
 
-<!-- Title Page-->
+
 <title>Student By CourseName</title>
 
-<!-- Icons font CSS-->
+
 <link href="vendor/mdi-font/css/material-design-iconic-font.min.css"
 	rel="stylesheet" media="all">
 <link href="vendor/font-awesome-4.7/css/font-awesome.min.css"
 	rel="stylesheet" media="all">
-<!-- Font special for pages-->
+
 <link
 	href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
 	rel="stylesheet">
 
-<!-- Vendor CSS-->
+
 <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
 <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet"
 	media="all">
 
-<!-- Main CSS-->
+
 <link href="/Css/main.css" rel="stylesheet" media="all">
 <script type="text/javascript" src="/js/backbtn.js"></script>
 </head>	
@@ -64,12 +64,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-
-		
-
-
-
-
+		</div></div>
 </body>
 </html>

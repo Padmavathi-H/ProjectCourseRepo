@@ -37,7 +37,7 @@
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title" align="center">>STUDENT SIGNUP</h2>
+                    <h2 class="title" align="center">STUDENT SIGNUP</h2>
                     <f:form action="SignUp" method="post" modelAttribute="studentData">
                         <div class="row row-space">
                             <div class="col-2">

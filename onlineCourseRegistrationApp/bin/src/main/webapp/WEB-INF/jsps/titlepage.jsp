@@ -63,7 +63,8 @@ background-size:cover;
 <div class="container-fluid full-bg-img d-flex align-items-center justify-content-center">
 <div class="row d-flex justify-content-center">
 <div class="col-md-12 text-center"><br><br><br><br><br>
-<h2 class="display-3 font-bol blue-text mb2" id="title">COURSE REGISTERATION SYSTEM</h2><br><br>
+<h1 class="display-1 font-bol blue-text mb2" id="title">WISDOM</h1>
+<h5 class="display font-bol blue-text mb2" id="title">COURSE REGISTERATION SYSTEM</h5><br><br>
 <button type="button" class="button btn" onclick="window.location.href='homepage'">Let's get started</button>
 </div></div>
 </div>

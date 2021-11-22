@@ -30,8 +30,6 @@
 
 <body>
 <%@taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
-
-
 <div style="flex-direction: row">
 <img style="width: 50px;height: 50px;float: left;margin-left: 10px; margin-top: 10px" onclick="goBack()" alt="backbutton" src="<%=request.getContextPath()%>/images/backbutton.png">
     <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
@@ -88,19 +86,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div></div>
 
-    <!-- Jquery JS-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <!-- Vendor JS-->
-    <script src="vendor/select2/select2.min.js"></script>
-    <script src="vendor/datepicker/moment.min.js"></script>
-    <script src="vendor/datepicker/daterangepicker.js"></script>
 
-    <!-- Main JS-->
-    <script src="js/global.js"></script>
-
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 
 </html>
-<!-- end document-->

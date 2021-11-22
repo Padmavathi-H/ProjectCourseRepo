@@ -13,11 +13,9 @@
 <img style="width: 50px;height: 50px;float: left;margin-left: 10px; margin-top: 10px" onclick="goBack()" alt="backbutton" src="<%=request.getContextPath()%>/images/backbutton.png"><br><br>
 <br>
 <br>
-<h1 align="center" style="font-family: serif; color:purple"><b>REGISTRAR DETAILS UPDATED SUCCESSFULLY !!!!<b></h1>
+<h1 align="center" style="font-family: serif; color:purple">REGISTRAR DETAILS UPDATED SUCCESSFULLY !!!!</h1>
 <img style="width: 400px;h;margin-left: 450px; margin-top: 10px" alt="success" src="/images/clapping-hands.png" >
 
 
-
-</script>
 </body>
 </html>

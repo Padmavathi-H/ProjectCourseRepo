@@ -14,9 +14,9 @@
 <img style="width: 50px;height: 50px;float: left;margin-left: 10px; margin-top: 10px" onclick="goBack()" alt="backbutton" src="<%=request.getContextPath()%>/images/backbutton.png">
 </div>
 <br><br>
-<h1 align="center" style="color:purple;font-family: serif"><b>REGISTRAR - ${reg.regName }'s Details<b></b></h1>
+<h1 align="center" style="color:purple;font-family: serif">REGISTRAR - ${reg.regName }'s Details</h1>
 <br><br>
-<table  class="table table-striped" style="color:purple">
+<table class="table table-striped" style="color:purple">
 <thead>
 <tr>
 <th scope="col">ID</th>
@@ -40,9 +40,10 @@
 <td>${reg.regYOExp }</td>
 <td>${reg.regPass }</td>
 </tr>
-</body>
 </tbody>
 </table>
+</body>
+
 
 </body>
 </html>

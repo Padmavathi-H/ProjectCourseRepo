@@ -128,7 +128,6 @@ public class AdminController {
 	@GetMapping("/getregistrarbyemail")
 	public String getregistrarbyusernameLauncher() {
 
-
 	return "getregistrarbyemail";
 
 	}
